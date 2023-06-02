@@ -1,9 +1,5 @@
 # ERA V1 Session 5
 
-[![Python 3.7+](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/release/python-370/)
-[![GitHub license](https://img.shields.io/github/license/TylerYep/torchinfo)](https://github.com/TylerYep/torchinfo/blob/main/LICENSE)
-
-
 This assignment repo provides information on using a simple neural network created using PyTorch library. In this project, we implement a model that uses MNIST handwritten dataset to predict digits in images. This repo contains three files namely `model.py` , `utils.py` and `S5.ipynb`. The contents and usage of these files are described below.
 
 # Usage
