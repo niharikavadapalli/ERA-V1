@@ -108,5 +108,6 @@ With our current model predicting on MNIST dataset, here is the model performanc
 
 
 ```
-<img src="https://github-production-user-asset-6210df.s3.amazonaws.com/135390352/243007186-abdf0f12-f3b1-4388-9328-a5c9fe7d36a2.png" alt="Alt text">
+![screenshot](https://github.com/niharikavadapalli/ERA-V1-Session-5/assets/135390352/ef4acaf0-fa67-4d0a-89d1-fb3bcddf8c09)
+
 ```
