@@ -82,6 +82,13 @@ After serveral experiments, drilled down to this final network with 14522 parame
 
 The above network was able to consistently produce a test accuracy of greater than 99.4% after 10 epochs. 
 
+<img width="852" alt="Screenshot 2023-06-09 at 19 07 50" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/4215a5fe-2860-4dcb-842a-71740d453e40">
+
+
+## Summary
+
+After trying various experiments with different network configurations, came to a final network that produced an accuracy of more than 99.4% under 20 epochs with 14522 parameters. Also tried with many other architecture modifications with minor changes such as changing number of conv output channels, number of conv layers, padding, maxpool layers, bias and dropouts. Also note that since the training and test accuracy has no significant difference, I didn't had to consider dropout after each conv layer. 
+
 
 
 
