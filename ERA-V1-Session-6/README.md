@@ -43,19 +43,37 @@ In this section, we train a neural network to predict hand written digits using 
 As part of 1st step, by observing the images in dataset, we can see that we need a receptive field (RF) of close to 7 pixels for the model to detect edges and gradients. So inorder to get a RF of 7, we added 3 convolutional layers followed by a maxpool layer indicating the first block of model that detects edges. Since the image size and complexity is small, we can have just another block of 3 convolutional layers followed by a global average pooling (GAP) followed by a fully connected layer. Each conv layer is followed by a relu and batch normalization except for the conv layer before output.
 
 <img width="563" alt="Screenshot 2023-06-09 at 18 34 01" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/9de00738-64d1-460c-81da-3c7d3ffffb3b">
+
 <img width="563" alt="Screenshot 2023-06-09 at 18 34 30" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/3069a099-2407-418d-b40b-0697e88a70f3">
 
 As we can see from above network with our initial experiment, we need to reduce the number of parameters to reach our target of 20000. To acheive this we reduce the output channel size in our next architecture.
 
 ## Architecture 2
+
 Now we try the first block of network with 8 output channels for each convolutional layer and with 16 output channels in our final block which makes the number of parameters to 9770 as shown below.
+
 <img width="505" alt="Screenshot 2023-06-09 at 18 46 09" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/81907b22-7032-4f91-81d3-e8ddaa5e0766">
+
 <img width="555" alt="Screenshot 2023-06-09 at 18 46 23" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/a7d65452-3341-455e-b626-e74812681ce8">
 
 But with above network, we observe that the accuracy doesn't increase after 10 epochs and stays close to 99.36% as shown below.
+
 <img width="856" alt="Screenshot 2023-06-09 at 18 49 40" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/103fb8b0-0c00-4641-9ea6-8af0e34cb387">
 
 ## Architecture 3
 
+In this architecture, I improved further by modifying the output channels of all the conv layers to 16 in both blocks. Also removed padding in conv layers of first block so that the output size after each layer reduces which still keeps the number of parameters less than 20000 as shown below.
+
+<img width="597" alt="Screenshot 2023-06-09 at 18 56 34" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/32e21a03-85ac-4665-b7d7-54fdaf3a4f0f">
+
+<img width="597" alt="Screenshot 2023-06-09 at 18 56 47" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/ae8da4f9-b6b7-40da-ba8e-b5a97f4b0cb5">
+
+But with the above changes, I did not observe any major improvement in terms of results as the accuracy stayed around 99% after 10 epochs.
+
+<img width="844" alt="Screenshot 2023-06-09 at 18 58 11" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/5540b8c0-e11c-449b-bb6f-c0600375ddbd">
+
+## Architecture 4
+
+After serveral experiments, drilled down to this final network with 
 
 
