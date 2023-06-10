@@ -48,5 +48,14 @@ As part of 1st step, by observing the images in dataset, we can see that we need
 As we can see from above network with our initial experiment, we need to reduce the number of parameters to reach our target of 20000. To acheive this we reduce the output channel size in our next architecture.
 
 ## Architecture 2
+Now we try the first block of network with 8 output channels for each convolutional layer and with 16 output channels in our final block which makes the number of parameters to 9770 as shown below.
+<img width="505" alt="Screenshot 2023-06-09 at 18 46 09" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/81907b22-7032-4f91-81d3-e8ddaa5e0766">
+<img width="555" alt="Screenshot 2023-06-09 at 18 46 23" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/a7d65452-3341-455e-b626-e74812681ce8">
+
+But with above network, we observe that the accuracy doesn't increase after 10 epochs and stays close to 99.36% as shown below.
+<img width="856" alt="Screenshot 2023-06-09 at 18 49 40" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/103fb8b0-0c00-4641-9ea6-8af0e34cb387">
+
+## Architecture 3
+
 
 
