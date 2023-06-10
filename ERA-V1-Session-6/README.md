@@ -40,7 +40,13 @@ Now as we increase the learning rate from 0.1 to 10000, we can see how many iter
 In this section, we train a neural network to predict hand written digits using the MNIST dataset. Our target is to use a network that has less than 20000 parameters and gets a test/validation accurary of > 99.4% under 20 epochs. Inorder to reach such an accuracy, I have tried different architectures as shown below and improved on the network in terms of number of parameters used and accuracy.
 
 ## Architecture 1
+As part of 1st step, by observing the images in dataset, we can see that we need a receptive field (RF) of close to 7 pixels for the model to detect edges and gradients. So inorder to get a RF of 7, we added 3 convolutional layers followed by a maxpool layer indicating the first block of model that detects edges. Since the image size and complexity is small, we can have just another block of 3 convolutional layers followed by a global average pooling (GAP) followed by a fully connected layer. Each conv layer is followed by a relu and batch normalization except for the conv layer before output.
+
 <img width="563" alt="Screenshot 2023-06-09 at 18 34 01" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/9de00738-64d1-460c-81da-3c7d3ffffb3b">
 <img width="563" alt="Screenshot 2023-06-09 at 18 34 30" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/3069a099-2407-418d-b40b-0697e88a70f3">
+
+As we can see from above network with our initial experiment, we need to reduce the number of parameters to reach our target of 20000. To acheive this we reduce the output channel size in our next architecture.
+
+## Architecture 2
 
 
