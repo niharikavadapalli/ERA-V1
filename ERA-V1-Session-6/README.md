@@ -37,3 +37,10 @@ Now as we increase the learning rate from 0.1 to 10000, we can see how many iter
 ![im9](https://github.com/niharikavadapalli/ERA-V1/assets/135390352/efb5c517-d5b8-40a4-ae7f-651485f08ea0)
 
 # Part 2
+In this section, we train a neural network to predict hand written digits using the MNIST dataset. Our target is to use a network that has less than 20000 parameters and gets a test/validation accurary of > 99.4% under 20 epochs. Inorder to reach such an accuracy, I have tried different architectures as shown below and improved on the network in terms of number of parameters used and accuracy.
+
+## Architecture 1
+<img width="563" alt="Screenshot 2023-06-09 at 18 34 01" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/9de00738-64d1-460c-81da-3c7d3ffffb3b">
+<img width="563" alt="Screenshot 2023-06-09 at 18 34 30" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/3069a099-2407-418d-b40b-0697e88a70f3">
+
+
