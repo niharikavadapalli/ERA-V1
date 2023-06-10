@@ -21,3 +21,19 @@ From above network, we can deduce these following values for each neuron. For ex
  Blocks 3 and 6 above shows the dE/dW for each of these weights.
  
  Here is a snapshot of excel sheet in which we have calculated all the backpropogation values for about 70 epochs.
+ 
+ ![Screenshot 2023-06-09 at 17 39 02](https://github.com/niharikavadapalli/ERA-V1/assets/135390352/a436c189-7596-43e9-a04a-829cb000458e)
+
+Now as we increase the learning rate from 0.1 to 10000, we can see how many iterations it takes for the loss to converge close to zero. Also we can observe that for a large value of LR it may not even converge. The figures below shows how loss changes with respect to number of iterations by increasing LR from 0.1 to 10000.
+
+![im1](https://github.com/niharikavadapalli/ERA-V1/assets/135390352/46052c55-c40f-4a68-996d-bb20e22fef90)
+![im2](https://github.com/niharikavadapalli/ERA-V1/assets/135390352/2812608d-f226-46c4-bb8e-22d1388a4012)
+![im3](https://github.com/niharikavadapalli/ERA-V1/assets/135390352/3509fa7a-bb70-4e49-b2af-fcabdc869a7d)
+![im4](https://github.com/niharikavadapalli/ERA-V1/assets/135390352/b7abcc7e-1445-4c0c-8e30-e7f6d1f8a977)
+![im5](https://github.com/niharikavadapalli/ERA-V1/assets/135390352/2629609b-3a74-46ee-ba33-712fd759bfb9)
+![im6](https://github.com/niharikavadapalli/ERA-V1/assets/135390352/06dff6a6-426b-4fca-8d65-afe94b1b8842)
+![im7](https://github.com/niharikavadapalli/ERA-V1/assets/135390352/086eaad6-e62a-4875-8e31-6e99391ef44a)
+![im8](https://github.com/niharikavadapalli/ERA-V1/assets/135390352/0e7fe630-0315-4edf-b05b-c768bd15253d)
+![im9](https://github.com/niharikavadapalli/ERA-V1/assets/135390352/efb5c517-d5b8-40a4-ae7f-651485f08ea0)
+
+# Part 2
