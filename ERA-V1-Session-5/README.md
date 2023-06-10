@@ -103,7 +103,5 @@ Estimated Total Size (MB): 2.93
 With our current model predicting on MNIST dataset, here is the model performance observed after running the model for 20 epochs.
 
 
-```
 ![screenshot](https://github.com/niharikavadapalli/ERA-V1-Session-5/assets/135390352/ef4acaf0-fa67-4d0a-89d1-fb3bcddf8c09)
 
-```
