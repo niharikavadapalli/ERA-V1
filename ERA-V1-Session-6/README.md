@@ -74,6 +74,16 @@ But with the above changes, I did not observe any major improvement in terms of 
 
 ## Architecture 4
 
-After serveral experiments, drilled down to this final network with 
+After serveral experiments, drilled down to this final network with 14522 parameters as shown below.
+
+<img width="581" alt="Screenshot 2023-06-09 at 19 01 52" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/d829895a-f105-4dc4-9f33-88e57aff2863">
+
+<img width="581" alt="Screenshot 2023-06-09 at 19 03 12" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/5975e9c4-ec6e-47ac-9411-6dc461ac7fa8">
+
+The above network was able to consistently produce a test accuracy of greater than 99.4% after 10 epochs. 
+
+
+
+
 
 
