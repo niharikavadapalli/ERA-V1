@@ -54,13 +54,13 @@ Come up with a lighter model with less than 8k parameters and making sure my mod
 
 <img width="564" alt="Screenshot 2023-06-16 at 17 26 04" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/b10c7315-af8f-46bf-ae1e-2427027c01be">
 
-As seen above, the model now has 7838 parameters only. I was able to reduce the model size by keeping the input and output channels as low as possible at each conv layer. With this model, I was able to get a best train accuracy of 99.60% and a best test accuracy of 99.22%.
+As seen above, the model now has 7838 parameters only. I was able to reduce the model size by keeping the input and output channels as low as possible at each conv layer. With this model, I was able to get a best train accuracy of 99.55% and a best test accuracy of 99.23%.
 
-<img width="918" alt="Screenshot 2023-06-16 at 17 34 01" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/f68c3736-a938-48e5-aea0-74473da11344">
+<img width="918" alt="Screenshot 2023-06-16 at 17 49 37" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/f62b7da2-adb7-46ac-96fe-62a732bb8ffb">
 
 ## Analysis:
 
-We clearly see that both the train and test accuracies fell down a little due to the decrease in the model size. Still the model did decently well acheiveing 99.6% and 99.22% accuracies for train and test. But we still see there is some overfitting and we need to tackle it as part of our next step. 
+We clearly see that both the train and test accuracies fell down a little due to the decrease in the model size. Still the model did decently well acheiveing 99.55% and 99.23% accuracies for train and test. But we still see there is some overfitting and we need to tackle it as part of our next step. 
 
 
 
