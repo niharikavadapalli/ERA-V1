@@ -62,6 +62,31 @@ As seen above, the model now has 7838 parameters only. I was able to reduce the 
 
 We clearly see that both the train and test accuracies fell down a little due to the decrease in the model size. Still the model did decently well acheiveing 99.55% and 99.23% accuracies for train and test. But we still see there is some overfitting and we need to tackle it as part of our next step. 
 
+# Model 4
+
+In this step, we acheive our final target model with greater than 99.4% test accuracy using a network with 7838 parameters under 15 epochs.
+
+## Target:
+
+Our final target is to reduce the overfitting problem and increase the test accuracy further to 99.4%. After several experiments, I was able to acheive this by using a 5% dropout after each convolution layer to reduce overfitting and adding image augmentation (image rotation by 6 degrees). I have also used a stepLR to reduce the learning rate by 10% after 8 epochs.
+
+## Results:
+
+Here is the final model I used with 7838 parameters. 
+
+<img width="566" alt="model4Params" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/c76e82e7-c02b-4cbc-bc2f-821971c22dd5">
+
+With the above model, I was able to achieve a best train accuracy of 99.10% and best test accuracy of 99.45%. And with this model, I was able to get a test accuracy of > 99.4% almost always after 10 epochs!!
+
+<img width="1196" alt="model4Result" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/038f62a2-4f34-4c92-ad93-9e09cd19fa0a">
+
+## Analysis:
+
+We can clearly see that adding dropout eliminated our overfitting problem making training more difficult to the model. Also image augmentation provided little more help to gain better training and eliminate chances of missing rotated images. Also during the experiments, I saw that the train loss almost remained saturated after 8 epochs and introducing a stepLR function after 8 epochs to reduce lr by 10% further improved the accuracy and helped acheveing the desired target consistently after 10 epochs.
+
+
+
+
 
 
 
