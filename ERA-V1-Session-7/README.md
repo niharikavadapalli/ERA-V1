@@ -24,7 +24,7 @@ Definitely a huge model with lot many parameters and have great scope to shrink 
 
 # Model 2
 
-In this model, I try to get the model skeleton right before making further improvements to it. After the analysis from previous step, we can see that we need maybe a Receptive Field(RF) of 5 pixels to detect the edges and gradients and need atleast a RF of 22 to cover the entire image. So I decided to come up with a basic skeleton that covers these without optimizing the model size.
+In this model, I try to get the model skeleton right before making further improvements to it. After the analysis from previous step, we can see that we need maybe a Receptive Field(RF) of 5 pixels to detect the edges and gradients and need atleast a RF of 22 to cover the entire image. So I decided to come up with a basic skeleton that covers these without optimizing the model size. I also added Batch Normalization after each conv layer that shown improvement in the overall accuracy and without it the accuracy was just 20%. Also the output block was a combination of (1x1) conv with adaptive average pooling to decrease the channel size and parameters at the end. 
 
 ## Target:
 
@@ -41,4 +41,6 @@ As seen above, the model size is now around 400k parameters. With this, I was ab
 ## Analysis:
 
 From the results, it seems that the skeleton worked pretty well getting a better train and test accuracies, although the model is huge compared to our target size and some overfitting. We still need to work on overfitting problem and model size in the coming steps.
+
+# Model 3
 
