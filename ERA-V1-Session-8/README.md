@@ -60,6 +60,7 @@ Note that the title of each of the figure in the above plot indicate the misclas
 
 ## Observation and Comparison:
 
+We can see that the performance of our network with Batch Normalization was far more better than the networks with layer and group normalizations achieving a best accuracy of 77%. This validates that the batch normalization is best suitable for the convolutional networks since it is applied accross batches of images rather than applying accross each image and taking mean for all images. And intuitively it seems that the layer and group normalization would work much better for language and contextual machine learning models.
 
 
 
