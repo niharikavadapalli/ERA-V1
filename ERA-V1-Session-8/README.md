@@ -28,7 +28,42 @@ Here is a plot that shows few of the misclassified images.
 
 <img width="663" alt="Screenshot 2023-06-23 at 18 56 24" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/bf27ded5-675b-4767-8066-1922e40fcea5">
 
+Note that the title of each of the figure in the above plot indicate the misclassified image label/actual image label.
+
 ## Model with Layer Normalization:
+
+With layer normalization after each convolution layer (except for 1x1 conv layers), we were able to achieve a best train accuracy of 71.50% and best test accuracy of 71.76%. The below image shows the accuracies and train/test losses of the network.
+
+<img width="894" alt="Screenshot 2023-06-23 at 19 00 03" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/017a72cc-bb79-45f7-8fe9-1aeb664ff3c0">
+
+<img width="1270" alt="Screenshot 2023-06-23 at 19 00 18" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/48b9b7c4-f3fa-4c20-82f4-37d6d16ac6fe">
+
+Here is a plot that shows few of the misclassified images.
+
+<img width="658" alt="Screenshot 2023-06-23 at 19 00 33" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/820da115-ebcf-4653-9a61-6bec01d6de90">
+
+Note that the title of each of the figure in the above plot indicate the misclassified image label/actual image label.
+
+## Model with Group Normalization:
+
+With group normalization with group size of 2 after each convolution layer (except for 1x1 conv layers), we were able to achieve a best train accuracy of 71% and best test accuracy of 70.41%. The below image shows the accuracies and train/test losses of the network.
+
+<img width="884" alt="Screenshot 2023-06-23 at 19 04 17" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/eec0fe72-3471-4d7a-ab93-f3d5fa5513df">
+
+<img width="1259" alt="Screenshot 2023-06-23 at 19 04 41" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/bc5c6629-9fd8-4eec-ad37-c52a1ecd86e5">
+
+Here is a plot that shows few of the misclassified images.
+
+<img width="665" alt="Screenshot 2023-06-23 at 19 04 54" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/c3e99031-7b3f-4cd3-a999-42538fd6b506">
+
+Note that the title of each of the figure in the above plot indicate the misclassified image label/actual image label.
+
+## Observation and Comparison:
+
+
+
+
+
 
 
 
