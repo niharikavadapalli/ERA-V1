@@ -108,12 +108,12 @@ class Net(nn.Module):
         # GAP
         self.gap = nn.Sequential(
             nn.AdaptiveAvgPool2d((1, 1))
-        ) # output_size = 1, RF = 26
+        )
 
         # CONVOLUTION 11
         self.convblock11 = nn.Sequential(
             nn.Conv2d(in_channels=64, out_channels=10, kernel_size=(1, 1), padding=0, bias=False)
-        ) # output_size = 2, RF = 26
+        ) 
 
 
 
