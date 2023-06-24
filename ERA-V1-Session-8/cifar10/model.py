@@ -25,7 +25,7 @@ class Net(nn.Module):
             getNorm(16, norm, GROUP_SIZE),
             nn.ReLU(),
             nn.Dropout(dropout_value)
-        ) # output_size = 30, RF = 3
+        ) # output_size = 32, RF = 3
 
         # CONVOLUTION 2
         self.convblock2 = nn.Sequential(
@@ -33,14 +33,14 @@ class Net(nn.Module):
             getNorm(32, norm, GROUP_SIZE),
             nn.ReLU(),
             nn.Dropout(dropout_value)
-        ) # output_size = 28, RF = 3
+        ) # output_size = 32, RF = 5
 
         # TRANSITION BLOCK 1
         # CONVOLUTION 4
         self.convblock3 = nn.Sequential(
             nn.Conv2d(in_channels=32, out_channels=16, kernel_size=(1, 1), padding=0, bias=False)
-        ) # output_size = 28, RF = 3
-        self.pool1 = nn.MaxPool2d(2, 2) # output_size = 14, RF = 6
+        )
+        self.pool1 = nn.MaxPool2d(2, 2) # output_size = 16, RF = 6
 
 
         # CONVOLUTION BLOCK 2
@@ -50,7 +50,7 @@ class Net(nn.Module):
             getNorm(16, norm, GROUP_SIZE),
             nn.ReLU(),
             nn.Dropout(dropout_value)
-        ) # output_size = 26, RF = 3
+        ) # output_size = 16, RF = 10
 
         # CONVOLUTION 5
         self.convblock5 = nn.Sequential(
@@ -58,7 +58,7 @@ class Net(nn.Module):
             getNorm(32, norm, GROUP_SIZE),
             nn.ReLU(),
             nn.Dropout(dropout_value)
-        ) # output_size = 26, RF = 3
+        ) # output_size = 16, RF = 14
 
         # CONVOLUTION 6
         self.convblock6 = nn.Sequential(
@@ -66,14 +66,14 @@ class Net(nn.Module):
             getNorm(32, norm, GROUP_SIZE),
             nn.ReLU(),
             nn.Dropout(dropout_value)
-        ) # output_size = 26, RF = 3
+        ) # output_size = 14, RF = 18
 
         # TRANSITION BLOCK 2
         # CONVOLUTION 7
         self.convblock7 = nn.Sequential(
             nn.Conv2d(in_channels=32, out_channels=16, kernel_size=(1, 1), padding=0, bias=False)
-        ) # output_size = 12, RF = 6
-        self.pool2 = nn.MaxPool2d(2, 2) # output_size = 12, RF = 6
+        ) 
+        self.pool2 = nn.MaxPool2d(2, 2) # output_size = 7, RF = 20
 
 
 
@@ -84,7 +84,7 @@ class Net(nn.Module):
             getNorm(16, norm, GROUP_SIZE),
             nn.ReLU(),
             nn.Dropout(dropout_value)
-        ) # output_size = 26, RF = 3
+        ) # output_size = 7, RF = 28
 
         # CONVOLUTION 9
         self.convblock9 = nn.Sequential(
@@ -92,7 +92,7 @@ class Net(nn.Module):
             getNorm(32, norm, GROUP_SIZE),
             nn.ReLU(),
             nn.Dropout(dropout_value)
-        ) # output_size = 26, RF = 3
+        ) # output_size = 5, RF = 36
 
         # CONVOLUTION 10
         self.convblock10 = nn.Sequential(
@@ -100,7 +100,7 @@ class Net(nn.Module):
             getNorm(64, norm, GROUP_SIZE),
             nn.ReLU(),
             nn.Dropout(dropout_value)
-        ) # output_size = 26, RF = 3
+        ) # output_size = 3, RF = 44
 
 
         # OUTPUT BLOCK
