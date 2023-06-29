@@ -15,13 +15,6 @@ incorrect_labels = []
 incorrect_pred = []
 
 def train(model, device, train_loader, optimizer, epoch):
-  train_acc.clear()
-  test_acc.clear()
-  train_losses.clear()
-  test_losses.clear()
-  incorrect_examples.clear()
-  incorrect_labels.clear()
-  incorrect_pred.clear()
   model.train()
   
   pbar = tqdm(train_loader)
