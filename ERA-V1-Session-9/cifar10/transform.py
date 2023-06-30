@@ -6,7 +6,7 @@ Created on Fri Jun 30 08:25:58 2023
 @author: svaddi
 """
 
-from dataset import MyDataset
+from cifar10.dataset import MyDataset
 from torchvision import datasets
 from torch.utils.data import DataLoader
 import albumentations as A
