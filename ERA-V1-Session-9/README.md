@@ -16,19 +16,16 @@ Where each C is a convolution block with 3 convolution layers. The first convolu
 
 As shown above, the total parameters used are 192k.
 
-## Model training:
+## Image Augmentation:
 
-With batch normalization after each convolution layer (except for 1x1 conv layers), we were able to acheive a best train accuracy of 77.40% and best test accuracy of 76.96%. As seen above, we used a dropout of 5% after each convolution layer to eliminate any overfitting done by the network. Also performed few data augmentation techniques such as image normalization and rotation to reduce overfitting and make training difficult to network. The images below shows the accuracies and train/test losses of the network.
+I have used Albumentations library to augment the train dataset. The below image shows different transforms used for augmentation. The different types of transforms that are used are HorizontalFlip, ShiftScaleRotate and CoarseDropOut.
 
-<img width="906" alt="Screenshot 2023-06-23 at 18 54 41" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/4069bc43-cb8d-49c7-af37-8d4269f7066e">
+<img width="1414" alt="Screenshot 2023-06-30 at 12 34 54" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/9bebe736-9796-44a7-bf86-6963bc97d9be">
 
-<img width="1246" alt="Screenshot 2023-06-23 at 18 55 15" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/78f8ba30-2cb1-4660-b101-15e01cbd40fa">
 
-Here is a plot that shows few of the misclassified images.
+## Model Training
 
-<img width="663" alt="Screenshot 2023-06-23 at 18 56 24" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/bf27ded5-675b-4767-8066-1922e40fcea5">
-
-Note that the title of each of the figure in the above plot indicate the misclassified image label/actual image label.
+With the above model architecture and data augmentations with CIFAR10 dataset, I was able to achieve a best train accuracy of 83.65% and a best test accuracy of 86.45% at around 27 epochs. Also the model seems to be consistently achieving an accuracy of more than 85% after 27 epochs (tested till 50 epochs run).
 
 ## Model with Layer Normalization:
 
