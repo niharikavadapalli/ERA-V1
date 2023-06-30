@@ -14,7 +14,10 @@ Where each C is a convolution block with 3 convolution layers. The first convolu
 
 ![Screenshot 2023-06-30 at 12 27 37](https://github.com/niharikavadapalli/ERA-V1/assets/135390352/06300dec-e0d0-450c-b258-82f5c96a7d98)
 
-As shown above, the total parameters used are 192k.
+As shown above, the total parameters used are 192k. With this architecture we were able to achieve a RF of 99 as shown in below image.
+
+<img width="941" alt="Screenshot 2023-06-30 at 15 04 23" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/6c821756-385d-4c72-8501-6d7b5d354daf">
+
 
 ## Image Augmentation:
 
