@@ -12,6 +12,7 @@ C1 C2 C3 C4 GAP c5
 
 Where each C is a convolution block with 3 convolution layers. The first convolution layer in each block C (except C1) is a combination of a conv2D layer and conv2D layer with dilation 2. The second convolution layer in each block C (except C1) block is a combination of a conv2D layer with depthwise separable convolution and a conv2D layer with dilation 4. The third convolution layer in each block C (except C1) is a combination of a conv2D layer and conv2D layer with dilation 8. The C1 block has one conv2D layer added to a conv2D layer of dilation 2 and dilation 4. The final C4 block is followed by a Global Average Pooling (GAP) layer and a 1x1 convolution to number of classes. The following diagram shows the parameters used and network structure.
 
+```
 ----------------------------------------------------------------
         Layer (type)               Output Shape         Param #
 ================================================================
@@ -123,6 +124,7 @@ Forward/backward pass size (MB): 20.98
 Params size (MB): 0.73
 Estimated Total Size (MB): 21.72
 ----------------------------------------------------------------
+```
 
 As shown above, the total parameters used are 192k.
 
