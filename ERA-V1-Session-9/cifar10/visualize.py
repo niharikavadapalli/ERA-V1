@@ -72,7 +72,7 @@ def print_data_stats(data_loader):
 def print_train_log(epochs, train_acc, test_acc, train_loss, test_loss, learning_rates):
     print("\nEpoch\t     Train Loss\t     Test Loss     Train Accuracy    Test Accuracy    Learning Rate")
     print("===========================================================================================")
-    for cnt in range(len(epochs)):
+    for cnt in range(epochs):
         print(f"{cnt+1}\t\t{train_loss[cnt]:0.2f}\t\t{test_loss[cnt]:0.2f}\t\t{train_acc[cnt]:0.4f}\t\t{test_acc[cnt]:0.4f}\t\t{learning_rates[cnt]:0.8f}\n")
 
     print("===========================================================================================")
