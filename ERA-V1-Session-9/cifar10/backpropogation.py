@@ -38,7 +38,7 @@ def train(model, device, train_loader, optimizer, epoch):
     correct += pred.eq(target.view_as(pred)).sum().item()
     processed += len(data)
 
-    pbar.set_description(desc= f'Loss={loss.item()} Batch_id={batch_idx} Accuracy={100*correct/processed:0.2f}')
+    pbar.set_description(desc= f'Loss={loss.item()} Batch_id={batch_idx} Accuracy={100*correct/processed:0.4f}')
     train_acc.append(100*correct/processed)
     
   return train_acc, train_losses
@@ -63,7 +63,7 @@ def test(model, device, test_loader):
     test_loss /= len(test_loader.dataset)
     test_losses.append(test_loss)
 
-    print('\nTest set: Average loss: {:.4f}, Accuracy: {}/{} ({:.2f}%)\n'.format(
+    print('\nTest set: Average loss: {:.4f}, Accuracy: {}/{} ({:.4f}%)\n'.format(
         test_loss, correct, len(test_loader.dataset),
         100. * correct / len(test_loader.dataset)))
 

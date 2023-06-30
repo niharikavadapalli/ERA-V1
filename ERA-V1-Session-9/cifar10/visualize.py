@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import torch
 from torchvision import transforms
+from torch.utils.data import DataLoader
 
 def plot_misclassified_images(incorrect_examples, incorrect_pred,  incorrect_labels):
     fig,ax = plt.subplots(3,5)
@@ -37,3 +38,41 @@ def plot_network_performance(train_losses, test_losses, train_acc, test_acc):
     axs[0, 1].set_title("Test Loss")
     axs[1, 1].plot(test_acc)
     axs[1, 1].set_title("Test Accuracy")
+    
+
+def print_samples(loader, count=16):
+    """
+    Print samples input images
+    """
+    # Print Random Samples
+    if not count % 8 == 0:
+        return
+    fig = plt.figure(figsize=(15, 5))
+    for imgs, labels in loader:
+        for i in range(count):
+            ax = fig.add_subplot(int(count/8), 8, i + 1, xticks=[], yticks=[])
+            ax.set_title(f'Label: {labels[i]}')
+            plt.imshow(imgs[i].numpy().transpose(1, 2, 0))
+        break
+    
+
+
+def print_data_stats(data_loader):
+    classes = data_loader.dataset.dataset.classes
+    class_count = {}
+    for _, labels in data_loader:
+      for label in labels:
+        label = classes[label]
+        if label not in class_count:
+            class_count[label] = 0
+        class_count[label] += 1
+    print(class_count)
+    
+
+def print_train_log(train_acc, test_acc, train_loss, test_loss, learning_rates):
+    print("\nEpoch\t     Train Loss\t     Test Loss     Train Accuracy    Test Accuracy    Learning Rate")
+    print("===========================================================================================")
+    for cnt in range(len(train_acc)):
+        print(f"{cnt+1}\t\t{train_loss[cnt]:0.2f}\t\t{test_loss[cnt]:0.2f}\t\t{train_acc[cnt]:0.2f}\t\t{test_acc[cnt]:0.2f}\t\t{learning_rates[cnt]:0.2f}\n")
+
+    print("===========================================================================================")
