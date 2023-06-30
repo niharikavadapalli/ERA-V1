@@ -22,6 +22,16 @@ I have used Albumentations library to augment the train dataset. The below image
 
 <img width="1414" alt="Screenshot 2023-06-30 at 12 34 54" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/9bebe736-9796-44a7-bf86-6963bc97d9be">
 
+## Code
+
+```
+backpropogation.py - contains methods to train and test, given a model, optimize, test and train loaders.
+dataset.py - contains MyDataset class which is a placeholder for dataset
+model.py - contains actual model implementation in pytorch
+transform.py - contains different transforms used to augment the data. This used Albumentation library for transform functions.
+visualize.py - contains all the helper methods to help visualize data and results.
+
+```
 
 ## Model Training
 
