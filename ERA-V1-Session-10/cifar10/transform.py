@@ -15,7 +15,7 @@ from albumentations.pytorch import ToTensorV2
 train_transforms = A.Compose([
         A.PadIfNeeded(40,40),
         A.RandomCrop(32,32),
-        A.HorizontalFlip(p=0.5),
+        A.HorizontalFlip(p=0.2),
         A.CoarseDropout(max_holes = 1, max_height=16, max_width=16, min_holes = 1, min_height=16, min_width=16, fill_value=(0.49139968, 0.48215841, 0.44653091), mask_fill_value = None),
         A.Normalize(mean= (0.49139968, 0.48215841, 0.44653091), std = (0.24703223, 0.24348513, 0.26158784)),
         ToTensorV2(),
