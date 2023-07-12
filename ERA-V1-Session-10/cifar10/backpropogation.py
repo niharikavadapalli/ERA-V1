@@ -14,7 +14,7 @@ incorrect_examples = []
 incorrect_labels = []
 incorrect_pred = []
 
-def train(model, device, train_loader, optimizer, epoch):
+def train(model, device, train_loader, optimizer, epoch, scheduler, criterion):
   model.train()
   
   pbar = tqdm(train_loader)
@@ -28,11 +28,12 @@ def train(model, device, train_loader, optimizer, epoch):
 
     y_pred = model(data)
 
-    loss = F.nll_loss(y_pred, target)
+    loss = criterion(y_pred, target)
     train_losses.append(loss)
 
     loss.backward()
     optimizer.step()
+    scheduler.step()
 
     pred = y_pred.argmax(dim = 1, keepdim=True)
     correct += pred.eq(target.view_as(pred)).sum().item()
@@ -43,7 +44,7 @@ def train(model, device, train_loader, optimizer, epoch):
     
   return train_acc, train_losses
 
-def test(model, device, test_loader):
+def test(model, device, test_loader, criterion):
     model.eval()
     test_loss = 0
     correct = 0
@@ -51,7 +52,7 @@ def test(model, device, test_loader):
         for data, target in test_loader:
             data, target = data.to(device), target.to(device)
             output = model(data)
-            test_loss += F.nll_loss(output, target, reduction='sum').item()  # sum up batch loss
+            test_loss += criterion(output, target, reduction='sum').item()  # sum up batch loss
             pred = output.argmax(dim=1, keepdim=True)  # get the index of the max log-probability
             idxs_mask = ((pred == target.view_as(pred))==False).view(-1)
             if idxs_mask.numel(): #if index masks is non-empty append the correspoding data value in incorrect examples
