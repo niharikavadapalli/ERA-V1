@@ -32,26 +32,32 @@ visualize.py - contains all the helper methods to help visualize data and result
 
 ## Model Training
 
-With the above model architecture and data augmentations with CIFAR10 dataset, I was able to achieve a best train accuracy of 96.25% and a best test accuracy of 93.11% in 24 epochs. Also the model seems to be consistently achieving an accuracy of more than 90% after 20 epochs where it first reached 90.1% as shown in below images.
+With the above model architecture and data augmentations with CIFAR10 dataset, I was able to achieve a best train accuracy of 96.25% and a best test accuracy of 93.11% in 24 epochs. Also the model seems to be consistently achieving an accuracy of more than 90% after 20 epochs where it first reached 90.1% as shown in below image. In this model, we used ADAM and CrossEntropyLoss functions to train the data.
 
 ![Screenshot 2023-07-14 at 14 19 31](https://github.com/niharikavadapalli/ERA-V1/assets/135390352/443de4f9-f16c-44bc-8443-6bc5e6cf3b63)
 
+<img width="733" alt="Screenshot 2023-07-14 at 14 35 54" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/a1b3b746-d9d7-4da7-b74d-54d53992af1b">
 
 
-![Screenshot 2023-06-30 at 14 44 48](https://github.com/niharikavadapalli/ERA-V1/assets/135390352/08dcef10-4608-4580-a21f-e5c0d214d5b5)
+The image below shows the parameters used for OneCycleLR policy implementation.
 
-![Screenshot 2023-06-30 at 14 44 12](https://github.com/niharikavadapalli/ERA-V1/assets/135390352/7cb2fca7-bb93-4134-9814-67712d175fa8)
+<img width="1387" alt="Screenshot 2023-07-14 at 14 34 07" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/cb5fd6c0-33f5-4688-befb-bd040327a9bd">
 
 
 ## Observations and Results:
 
-We can see that by adding dilated convolutions and depthwise separable convolutions, we were able to improve the performance of the network from 75% accuracy in previous model (Session 8) to 87.3% accuracy. We were also able to achieve 85% accuracy within first 25 epochs and with network under 200k parameters. The below images show how accuracies and losses changes across epochs.
+We can see that by using One Cycle LR policy, we were able to improve the performance of the network from 87% accuracy in previous model (Session 9) to 93.1% accuracy using our custom ResNet model. The below images show how accuracies and losses changes across epochs.
 
-![Screenshot 2023-06-30 at 14 50 55](https://github.com/niharikavadapalli/ERA-V1/assets/135390352/b482fb66-bde7-4b07-a11e-e516ec03a2a9)
+<img width="1127" alt="Screenshot 2023-07-14 at 14 35 40" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/da467558-f350-4335-a244-220f8da13f20">
+
+The below image shows how the learning rate is changed across 24 epochs.
+
+<img width="533" alt="Screenshot 2023-07-14 at 14 36 37" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/0929d77d-6782-47dd-a7eb-cde41ce6c7d8">
 
 The below image shows some of the misclassified images. Note that the title of each image below indicates predicted image label vs actual image label.
 
-![Screenshot 2023-06-30 at 14 52 40](https://github.com/niharikavadapalli/ERA-V1/assets/135390352/75b576ac-33dd-4c0c-b6d7-6d177557e8c9)
+<img width="581" alt="Screenshot 2023-07-14 at 14 37 53" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/38cd7234-17c3-4a81-87bf-ab5407b5d0bc">
+
 
 
 
