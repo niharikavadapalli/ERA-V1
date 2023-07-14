@@ -1,22 +1,16 @@
-# ERA V1 Session 9
+# ERA V1 Session 10
 
-In this session, we try to improve our previous model on CIFAR10 dataset to achieve an accuracy of more than 85% under 200k parameters and by using dilated and deptwise separable convolutions.
+In this session, we write our own custrom ResNet architecture for CIFAR10 dataset to acheive a target accuracy of 90% under 24 epochs using One Cycle LR policy.
 
 ## Model Skeleton:
 
-The model we used has the following structure. 
+The model we used is shown below. 
 
-```
-C1 C2 C3 C4 GAP c5
-```
+<img width="708" alt="Screenshot 2023-07-14 at 14 24 32" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/d3a1063c-2ea3-4871-ab72-53b05aa921af">
 
-Where each C is a convolution block with 3 convolution layers. The first convolution layer in each block C (except C1) is a combination of a conv2D layer and conv2D layer with dilation 2. The second convolution layer in each block C (except C1) block is a combination of a conv2D layer with depthwise separable convolution and a conv2D layer with dilation 4. The third convolution layer in each block C (except C1) is a combination of a conv2D layer and conv2D layer with dilation 8. The C1 block has one conv2D layer added to a conv2D layer of dilation 2 and dilation 4. The final C4 block is followed by a Global Average Pooling (GAP) layer and a 1x1 convolution to number of classes. The following diagram shows the parameters used and network structure.
+<img width="565" alt="Screenshot 2023-07-14 at 14 23 56" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/2a1ed7e3-858e-410e-993a-10326427a9f1">
 
-![Screenshot 2023-06-30 at 12 27 37](https://github.com/niharikavadapalli/ERA-V1/assets/135390352/06300dec-e0d0-450c-b258-82f5c96a7d98)
-
-As shown above, the total parameters used are 192k. With this architecture we were able to achieve a RF of 99 as shown in below image.
-
-<img width="941" alt="Screenshot 2023-06-30 at 15 04 23" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/6c821756-385d-4c72-8501-6d7b5d354daf">
+As shown above, the total parameters used are around 6.5M. 
 
 
 ## Image Augmentation:
