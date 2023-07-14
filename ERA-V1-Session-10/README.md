@@ -34,7 +34,8 @@ visualize.py - contains all the helper methods to help visualize data and result
 
 With the above model architecture and data augmentations with CIFAR10 dataset, I was able to achieve a best train accuracy of 96.25% and a best test accuracy of 93.11% in 24 epochs. Also the model seems to be consistently achieving an accuracy of more than 90% after 20 epochs where it first reached 90.1% as shown in below images.
 
-<img width="708" alt="Screenshot 2023-07-14 at 14 24 32" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/f2b26140-cac2-4476-914c-b59fd8290fbf">
+![Screenshot 2023-07-14 at 14 19 31](https://github.com/niharikavadapalli/ERA-V1/assets/135390352/443de4f9-f16c-44bc-8443-6bc5e6cf3b63)
+
 
 
 ![Screenshot 2023-06-30 at 14 44 48](https://github.com/niharikavadapalli/ERA-V1/assets/135390352/08dcef10-4608-4580-a21f-e5c0d214d5b5)
