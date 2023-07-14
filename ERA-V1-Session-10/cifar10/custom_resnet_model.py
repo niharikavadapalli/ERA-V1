@@ -4,9 +4,9 @@ import torch
 
 dropout_value = 0.05
 
-class Net2(nn.Module):
+class Net(nn.Module):
     def __init__(self):
-        super(Net2, self).__init__()
+        super(Net, self).__init__()
 
         # Prep Layer
         self.convblock1 = nn.Sequential(
