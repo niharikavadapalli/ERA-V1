@@ -74,7 +74,7 @@ class Net(nn.Module):
         # Final layer
         self.convblock5 = nn.Sequential(
             nn.MaxPool2d(4,4)
-        ) # output_size = 2
+        ) # output_size = 1
 
         self.fc = nn.Sequential(
             nn.Linear(512, 10)
