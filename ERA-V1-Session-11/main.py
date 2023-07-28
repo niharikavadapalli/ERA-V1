@@ -13,7 +13,7 @@ import torch.nn.functional as F
 import torch.optim as optim
 from torchvision import datasets, transforms
 from tqdm import tqdm
-from utils import get_OneCycleLR
+from utils.utilities import get_OneCycleLR
 
 class main():
 
