@@ -1,7 +1,8 @@
 import matplotlib.pyplot as plt
 import torch
 from torchvision import transforms
-from torch.utils.data import DataLoader
+from pytorch_grad_cam import GradCAM
+from pytorch_grad_cam.utils.image import show_cam_on_image
 
 def plot_misclassified_images(incorrect_examples, incorrect_pred,  incorrect_labels):
     fig,ax = plt.subplots(3,5)
@@ -76,3 +77,39 @@ def print_train_log(epochs, train_acc, test_acc, train_loss, test_loss, learning
         print(f"{cnt+1}\t\t{train_loss[cnt]:0.2f}\t\t{test_loss[cnt]:0.2f}\t\t{train_acc[cnt]:0.4f}\t\t{test_acc[cnt]:0.4f}\t\t{learning_rates[cnt]:0.8f}\n")
 
     print("===========================================================================================")
+    
+
+
+def plot_grad_cam_images(model, incorrect_examples, incorrect_pred,  incorrect_labels):
+    fig,ax = plt.subplots(3,5)
+    ax = ax.ravel()
+    for i in range(15):
+        image = incorrect_examples[0][i]
+        t = torch.from_numpy(image)
+        invTrans = transforms.Compose([ transforms.Normalize(mean = [ 0., 0., 0. ],
+                                                         std = [ 1/0.24703223, 1/0.24348513, 1/0.26158784 ]),
+                                    transforms.Normalize(mean = [ -0.49139968, -0.48215841, -0.44653091 ],
+                                                         std = [ 1., 1., 1. ]),
+                                   ])
+    
+        inv_tensor = invTrans(t)
+        rgb_img = inv_tensor.permute(1,2,0)
+
+        input_tensor = torch.tensor(inv_tensor.unsqueeze(0))
+        target_layers = [model.layer3[-1]]
+
+        cam = GradCAM(model=model, target_layers=target_layers, use_cuda=True)
+
+        grayscale_cam = cam(input_tensor=input_tensor, targets=None, aug_smooth=True, eigen_smooth=True)
+
+        grayscale_cam = grayscale_cam[0, :]
+        visualization = show_cam_on_image(rgb_img.numpy(), grayscale_cam, use_rgb=True, image_weight=0.725)
+        ax[i].imshow(visualization)
+        ax[i].set_title(f"{incorrect_pred[0][i]}/{incorrect_labels[0][i]}")
+        ax[i].set( xticks=[], yticks=[])
+    plt.axis('off')
+    plt.tight_layout()
+    plt.xlabel('Misclassified Images')
+    plt.ylabel('Loss')
+    plt.legend("Incorrect Prediction/Actual Label")
+    plt.show()
