@@ -1,10 +1,10 @@
-# ERA V1 Session 10
+# ERA V1 Session 11
 
-In this session, we write our own custrom ResNet architecture for CIFAR10 dataset to acheive a target accuracy of 90% under 24 epochs using One Cycle LR policy.
+In this session, we focus mainly on analysing how GradCam can be used to visually see what the trained model is looking at an image to detect an object in it.
 
 ## Model Skeleton:
 
-The model we used is shown below. 
+In this session, we used a ResNet 18 model to run on Cifar10 dataset using oneCycleLR policy to get faster and better accuracy followed by analysis using GradCam. The images below shows the model summary.
 
 <img width="708" alt="Screenshot 2023-07-14 at 14 24 32" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/d3a1063c-2ea3-4871-ab72-53b05aa921af">
 
