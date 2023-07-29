@@ -35,6 +35,7 @@ class main():
         self.train_loader = train_loader
         self.test_loader = test_loader
         self.found_lr = found_lr
+        self.learning_rates = []
     
     def train(self):
       self.model.train()
