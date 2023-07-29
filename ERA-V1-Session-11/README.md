@@ -6,9 +6,9 @@ In this session, we focus mainly on analysing how GradCam can be used to visuall
 
 In this session, we used a ResNet 18 model to run on Cifar10 dataset using oneCycleLR policy to get faster and better accuracy followed by analysis using GradCam. The images below shows the model summary and skeleton.
 
-<img width="708" alt="Screenshot 2023-07-14 at 14 24 32" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/d3a1063c-2ea3-4871-ab72-53b05aa921af">
+<img width="753" alt="Screenshot 2023-07-28 at 17 42 15" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/5218c812-adc1-4f86-a48c-a026244c6bbf">
 
-<img width="565" alt="Screenshot 2023-07-14 at 14 23 56" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/2a1ed7e3-858e-410e-993a-10326427a9f1">
+<img width="430" alt="Screenshot 2023-07-28 at 17 43 06" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/d8ae4998-9de7-4d02-9bc0-0486f2fe02b0">
 
 As shown above, the total parameters used are around 11.2M. 
 
@@ -17,7 +17,8 @@ As shown above, the total parameters used are around 11.2M.
 
 I have used Albumentations library to augment the train dataset. The below image shows different transforms used for augmentation. The different types of transforms that are used are RandomCrop and CoarseDropOut.
 
-<img width="1394" alt="Screenshot 2023-07-14 at 14 27 49" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/39757980-edb5-49ae-b566-6ad48dd955dc">
+<img width="1324" alt="Screenshot 2023-07-28 at 17 44 33" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/f18f0d54-e3c9-475d-845f-f93ca70578de">
+
 
 ## Code
 
