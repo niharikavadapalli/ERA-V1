@@ -18,16 +18,16 @@ from utils.utilities import get_OneCycleLR
 class main():
 
     def __init__(self, model, epochs, batch_size, scheduler, optimizer, criterion, device, train_loader, test_loader, found_lr):
-        train_acc = []
-        test_acc = []
-        train_losses = []
-        test_losses = []
-        incorrect_examples = []
-        incorrect_labels = []
-        incorrect_pred = []
-        EPOCHS = epochs
-        BATCH_SIZE = batch_size
-        SCHEDULER = scheduler
+        self.train_acc = []
+        self.test_acc = []
+        self.train_losses = []
+        self.test_losses = []
+        self.incorrect_examples = []
+        self.incorrect_labels = []
+        self.incorrect_pred = []
+        self.EPOCHS = epochs
+        self.BATCH_SIZE = batch_size
+        self.SCHEDULER = scheduler
         model = model
         optimizer = optimizer
         criterion = criterion
