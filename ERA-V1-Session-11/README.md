@@ -36,19 +36,18 @@ utils/utilities.py - contains helper methods to implement OneCycleLR policy.
 
 With the above model architecture and data augmentations with CIFAR10 dataset, I was able to achieve a best train accuracy of 95.15% and a best test accuracy of 92.44% in 20 epochs. Also the model seems to be consistently achieving an accuracy of more than 90% after 18 epochs where it first reached 91.3% as shown in below image. In this model, we used ADAM and CrossEntropyLoss functions to train the data.
 
-![Screenshot 2023-07-14 at 14 19 31](https://github.com/niharikavadapalli/ERA-V1/assets/135390352/443de4f9-f16c-44bc-8443-6bc5e6cf3b63)
+<img width="694" alt="Screenshot 2023-07-28 at 17 45 57" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/cbfa0f72-d03b-4314-bfce-0765aa22743c">
 
-<img width="733" alt="Screenshot 2023-07-14 at 14 35 54" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/a1b3b746-d9d7-4da7-b74d-54d53992af1b">
+<img width="610" alt="Screenshot 2023-07-28 at 17 46 16" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/e5b70601-d172-46e6-8391-e3791b49c059">
 
+The image below shows the code used for GradCam implementation.
 
-The image below shows the parameters used for OneCycleLR policy implementation.
-
-<img width="1387" alt="Screenshot 2023-07-14 at 14 34 07" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/cb5fd6c0-33f5-4688-befb-bd040327a9bd">
+<img width="755" alt="Screenshot 2023-07-28 at 17 47 54" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/65327a63-84ed-48dc-a973-f68112be5f52">
 
 
 ## Observations and Results:
 
-We can see that by using One Cycle LR policy, we were able to improve the performance of the network from 87% accuracy in previous model (Session 9) to 93.1% accuracy using our custom ResNet model. The below images show how accuracies and losses changes across epochs.
+We can see that by using the above model we were able to acheive more than 90% accuracy. 
 
 <img width="1127" alt="Screenshot 2023-07-14 at 14 35 40" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/da467558-f350-4335-a244-220f8da13f20">
 
