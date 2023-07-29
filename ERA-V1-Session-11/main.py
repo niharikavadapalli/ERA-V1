@@ -27,7 +27,7 @@ class main():
         self.incorrect_pred = []
         self.EPOCHS = epochs
         self.BATCH_SIZE = batch_size
-        self.SCHEDULER = scheduler
+        self.scheduler = scheduler
         self.model = model
         self.optimizer = optimizer
         self.criterion = criterion
