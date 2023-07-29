@@ -28,13 +28,13 @@ class main():
         self.EPOCHS = epochs
         self.BATCH_SIZE = batch_size
         self.SCHEDULER = scheduler
-        model = model
-        optimizer = optimizer
-        criterion = criterion
-        device = device
-        train_loader = train_loader
-        test_loader = test_loader
-        found_lr = found_lr
+        self.model = model
+        self.optimizer = optimizer
+        self.criterion = criterion
+        self.device = device
+        self.train_loader = train_loader
+        self.test_loader = test_loader
+        self.found_lr = found_lr
     
     def train(self):
       self.model.train()
