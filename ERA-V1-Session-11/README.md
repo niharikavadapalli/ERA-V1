@@ -4,35 +4,36 @@ In this session, we focus mainly on analysing how GradCam can be used to visuall
 
 ## Model Skeleton:
 
-In this session, we used a ResNet 18 model to run on Cifar10 dataset using oneCycleLR policy to get faster and better accuracy followed by analysis using GradCam. The images below shows the model summary.
+In this session, we used a ResNet 18 model to run on Cifar10 dataset using oneCycleLR policy to get faster and better accuracy followed by analysis using GradCam. The images below shows the model summary and skeleton.
 
 <img width="708" alt="Screenshot 2023-07-14 at 14 24 32" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/d3a1063c-2ea3-4871-ab72-53b05aa921af">
 
 <img width="565" alt="Screenshot 2023-07-14 at 14 23 56" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/2a1ed7e3-858e-410e-993a-10326427a9f1">
 
-As shown above, the total parameters used are around 6.5M. 
+As shown above, the total parameters used are around 11.2M. 
 
 
 ## Image Augmentation:
 
-I have used Albumentations library to augment the train dataset. The below image shows different transforms used for augmentation. The different types of transforms that are used are RandomCrop, HorizontalFlip and CoarseDropOut.
+I have used Albumentations library to augment the train dataset. The below image shows different transforms used for augmentation. The different types of transforms that are used are RandomCrop and CoarseDropOut.
 
 <img width="1394" alt="Screenshot 2023-07-14 at 14 27 49" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/39757980-edb5-49ae-b566-6ad48dd955dc">
 
 ## Code
 
 ```
-backpropogation.py - contains methods to train and test, given a model, optimize, test and train loaders.
-dataset.py - contains MyDataset class which is a placeholder for dataset
-custom_resnet_model.py - contains actual model implementation in pytorch
-transform.py - contains different transforms used to augment the data. This used Albumentation library for transform functions.
-visualize.py - contains all the helper methods to help visualize data and results.
+main.py - contains methods to train and test, given a model, optimize, test and train loaders.
+utils/dataset.py - contains MyDataset class which is a placeholder for dataset
+models/resnet.py - contains actual ResNet model implementation in pytorch
+utils/transform.py - contains different transforms used to augment the data. This used Albumentation library for transform functions.
+utils/visualize.py - contains all the helper methods to help visualize data and results.
+utils/utilities.py - contains helper methods to implement OneCycleLR policy.
 
 ```
 
 ## Model Training
 
-With the above model architecture and data augmentations with CIFAR10 dataset, I was able to achieve a best train accuracy of 96.25% and a best test accuracy of 93.11% in 24 epochs. Also the model seems to be consistently achieving an accuracy of more than 90% after 20 epochs where it first reached 90.1% as shown in below image. In this model, we used ADAM and CrossEntropyLoss functions to train the data.
+With the above model architecture and data augmentations with CIFAR10 dataset, I was able to achieve a best train accuracy of 95.15% and a best test accuracy of 92.44% in 20 epochs. Also the model seems to be consistently achieving an accuracy of more than 90% after 18 epochs where it first reached 91.3% as shown in below image. In this model, we used ADAM and CrossEntropyLoss functions to train the data.
 
 ![Screenshot 2023-07-14 at 14 19 31](https://github.com/niharikavadapalli/ERA-V1/assets/135390352/443de4f9-f16c-44bc-8443-6bc5e6cf3b63)
 
