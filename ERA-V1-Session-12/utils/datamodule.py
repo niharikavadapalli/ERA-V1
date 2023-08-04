@@ -33,6 +33,8 @@ class CustomCifar10DataModule(LightningDataModule):
             ]
         )
         self.val_transforms = self.test_transforms
+        self.prepare_data()
+        self.setup()
         
     ####################
     # DATA RELATED HOOKS
