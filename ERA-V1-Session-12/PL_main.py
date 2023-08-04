@@ -59,5 +59,5 @@ def create_and_train_pl_model(PATH_DATASETS, BATCH_SIZE, NUM_WORKERS):
     
     trainer.fit(model, cifar10_dm)
     trainer.test(model, datamodule=cifar10_dm)
-    return trainer
+    return trainer, model, cifar10_dm
     
