@@ -15,13 +15,14 @@ from torch.optim.lr_scheduler import OneCycleLR
 
 
 class LitResnet(LightningModule):
-    def __init__(self, lr=0.05, BATCH_SIZE = 256, best_lr = 2.93E-02):
+    def __init__(self, lr=0.05, BATCH_SIZE = 256, NUM_WORKERS = 1, best_lr = 2.93E-02):
         super().__init__()
 
         self.save_hyperparameters()
         self.model = Net()
         self.BATCH_SIZE = BATCH_SIZE
         self.best_lr = best_lr
+        self.NUM_WORKERS = NUM_WORKERS
 
     def forward(self, x):
         out = self.model(x)
