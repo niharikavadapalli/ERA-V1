@@ -15,12 +15,13 @@ from torch.optim.lr_scheduler import OneCycleLR
 
 
 class LitResnet(LightningModule):
-    def __init__(self, lr=0.05, BATCH_SIZE = 64):
+    def __init__(self, lr=0.05, BATCH_SIZE = 256, best_lr = 2.93E-02):
         super().__init__()
 
         self.save_hyperparameters()
         self.model = Net()
         self.BATCH_SIZE = BATCH_SIZE
+        self.best_lr = best_lr
 
     def forward(self, x):
         out = self.model(x)
@@ -62,7 +63,7 @@ class LitResnet(LightningModule):
         scheduler_dict = {
             "scheduler": OneCycleLR(
                 optimizer,
-                2.93E-02,
+                self.best_lr,
                 epochs=self.trainer.max_epochs,
                 steps_per_epoch=steps_per_epoch,
             ),
