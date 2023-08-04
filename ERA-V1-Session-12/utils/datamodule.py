@@ -12,7 +12,7 @@ from pytorch_lightning import LightningDataModule
 from torchvision import transforms
 
 class CustomCifar10DataModule(LightningDataModule):
-    def __init__(self, batch_size, num_workers = 2):
+    def __init__(self, PATH_DATASETS, batch_size, num_workers = 2):
         # Initialize the class. Set up the datadir, image dims, and num classes
         super().__init__()
         self.BATCH_SIZE = batch_size
@@ -25,6 +25,7 @@ class CustomCifar10DataModule(LightningDataModule):
                 transforms.Normalize(mean=(0.491,0.482,0.447),std=(0.247,0.244,0.262))
             ]
         )
+        self.data_dir = PATH_DATASETS
         
         self.test_transforms = transforms.Compose(
             [
