@@ -22,14 +22,14 @@ class CustomCifar10DataModule(LightningDataModule):
                 transforms.RandomCrop(32, padding=4),
                 transforms.RandomHorizontalFlip(),
                 transforms.ToTensor(),
-                transforms.Normalize(mean=(0.491,0.482,0.447),std=(0.247,0.244,0.262), always_apply=True)
+                transforms.Normalize(mean=(0.491,0.482,0.447),std=(0.247,0.244,0.262))
             ]
         )
         
         self.test_transforms = transforms.Compose(
             [
                 transforms.ToTensor(),
-                transforms.Normalize(mean=(0.491,0.482,0.447),std=(0.247,0.244,0.262), always_apply=True)
+                transforms.Normalize(mean=(0.491,0.482,0.447),std=(0.247,0.244,0.262))
             ]
         )
         self.val_transforms = self.test_transforms
