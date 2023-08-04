@@ -21,7 +21,7 @@ from torch_lr_finder import LRFinder
 def create_pl_model(BATCH_SIZE, NUM_WORKERS, best_lr):
     return LitResnet(lr=0.01, BATCH_SIZE=BATCH_SIZE, best_lr=best_lr)
 
-def create_and_train_pl_model(model, datamodule):
+def train_pl_model(model, datamodule):
     trainer = Trainer(
         max_epochs=2,
         accelerator="auto",
