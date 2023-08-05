@@ -18,8 +18,8 @@ from pytorch_lightning.callbacks.progress import TQDMProgressBar
 from torch_lr_finder import LRFinder
 
 
-def create_pl_model(BATCH_SIZE, NUM_WORKERS, best_lr):
-    return LitResnet(lr=0.01, BATCH_SIZE=BATCH_SIZE, best_lr=best_lr)
+def create_pl_model(BATCH_SIZE, NUM_WORKERS, best_lr, epochs = 2):
+    return LitResnet(lr=0.01, BATCH_SIZE=BATCH_SIZE, best_lr=best_lr, epochs=epochs)
 
 def train_pl_model(model, datamodule, epochs = 2):
     trainer = Trainer(
