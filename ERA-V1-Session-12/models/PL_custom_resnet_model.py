@@ -65,8 +65,14 @@ class LitResnet(LightningModule):
             "scheduler": OneCycleLR(
                 optimizer,
                 self.best_lr,
+                pct_start = 5./self.trainer.max_epochs,
+                div_factor = 2000,
+                three_phase =False,
+                final_div_factor = 1,
                 epochs=self.trainer.max_epochs,
                 steps_per_epoch=steps_per_epoch,
+                anneal_strategy = 'linear',
+                verbose=False
             ),
             "interval": "step",
         }
