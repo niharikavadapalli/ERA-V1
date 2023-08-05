@@ -46,7 +46,7 @@ def get_max_lr(datamodule,BATCH_SIZE,NUM_WORKERS, device):
     )
     loss_func = F.nll_loss
     train_loader = DataLoader(datamodule.train_dataset, batch_size=BATCH_SIZE, num_workers=NUM_WORKERS, shuffle=True)
-    lr_finder = LRFinder(dummy_model, optimizer, loss_func, device) 
+    lr_finder = LRFinder(dummy_model.model, optimizer, loss_func, device) 
     lr_finder.range_test(train_loader, end_lr=10, num_iter=200, step_mode='exp')
     best_lr = lr_finder.plot()
     lr_finder.reset()
