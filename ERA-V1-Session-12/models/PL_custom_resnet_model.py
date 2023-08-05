@@ -5,7 +5,7 @@ Created on Fri Aug  4 11:42:02 2023
 
 @author: svaddi
 """
-
+import math
 import torch
 import torch.nn.functional as F
 from pytorch_lightning import LightningModule
@@ -61,7 +61,7 @@ class LitResnet(LightningModule):
             momentum=0.9,
             weight_decay=5e-4,
         )
-        steps_per_epoch = 45000 // self.BATCH_SIZE
+        steps_per_epoch = math.ceil(45000 // self.BATCH_SIZE)
         scheduler_dict = {
             "scheduler": OneCycleLR(
                 optimizer,
