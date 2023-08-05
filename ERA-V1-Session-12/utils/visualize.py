@@ -4,6 +4,7 @@ from torchvision import transforms
 from pytorch_grad_cam import GradCAM
 from pytorch_grad_cam.utils.image import show_cam_on_image
 import torchinfo
+import numpy as np
 
 def get_incorrect_predictions(model, test_loader, device):
     incorrect_examples = []
@@ -15,28 +16,28 @@ def get_incorrect_predictions(model, test_loader, device):
             data, target = data.to(device), target.to(device)
             output = model(data)
             pred = output.argmax(dim=1)
-            if not pred.eq(target.view_as(pred)).item():
-                incorrect_examples.append(data)
-                incorrect_pred.append(pred)
-                incorrect_labels.append(target)
+            for d, t, p, o in zip(data, target,pred, output):
+                if not p.eq(t.view_as(p)).item():
+                    incorrect_examples.append(d.cpu())
+                    incorrect_pred.append(p.cpu())
+                    incorrect_labels.append(t.cpu())
     return incorrect_examples, incorrect_pred,  incorrect_labels
 
-def plot_misclassified_images(model, test_loader, device, class_names, rows=3, columns=5):
+def plot_misclassified(model, test_loader, device, class_names, rows=3, columns=5):
     incorrect_examples, incorrect_pred,  incorrect_labels = get_incorrect_predictions(model, test_loader, device)
     fig,ax = plt.subplots(rows,columns)
     ax = ax.ravel()
     for i in range(rows*columns):
-        image = incorrect_examples[0][i]
-        t = torch.from_numpy(image)
+        image = incorrect_examples[i].squeeze()
         invTrans = transforms.Compose([ transforms.Normalize(mean = [ 0., 0., 0. ],
                                                          std = [ 1/0.24703223, 1/0.24348513, 1/0.26158784 ]),
                                     transforms.Normalize(mean = [ -0.49139968, -0.48215841, -0.44653091 ],
                                                          std = [ 1., 1., 1. ]),
                                    ])
     
-        inv_tensor = invTrans(t)
-        ax[i].imshow(inv_tensor.permute(1,2,0))
-        ax[i].set_title(f"{class_names[incorrect_pred[0][i]]}/{class_names[incorrect_labels[0][i]]}")
+        inv_image = invTrans(image)
+        ax[i].imshow(inv_image.permute(1,2,0))
+        ax[i].set_title(f"{class_names[incorrect_pred[i].item()]}/{class_names[incorrect_labels[i].item()]}")
         ax[i].set( xticks=[], yticks=[])
     plt.axis('off')
     plt.tight_layout()
@@ -98,33 +99,47 @@ def print_train_log(epochs, train_acc, test_acc, train_loss, test_loss, learning
     
 
 
-def plot_grad_cam_images(model, test_loader, device, class_names, rows=3, columns=5, transparency = 0.725):
+def get_target_block(model, layer):
+    if layer == 1:
+        return [model.model.convblock4[-1]]
+    elif layer == 2:
+        return [model.model.convblock3[-1]]
+    elif layer == 3:
+        return [model.model.convblock2[-1]]
+    elif layer == 4:
+        return [model.model.convblock1[-1]]
+    else:
+        return None
+
+def plot_grad_cam(model, test_loader, device, class_names, rows=3, columns=5, transparency = 0.725, layer = 1):
     incorrect_examples, incorrect_pred,  incorrect_labels = get_incorrect_predictions(model, test_loader, device)
     fig,ax = plt.subplots(rows,columns)
     ax = ax.ravel()
     for i in range(rows*columns):
-        image = incorrect_examples[0][i]
-        t = torch.from_numpy(image)
+        image = incorrect_examples[i].squeeze()
         invTrans = transforms.Compose([ transforms.Normalize(mean = [ 0., 0., 0. ],
                                                          std = [ 1/0.24703223, 1/0.24348513, 1/0.26158784 ]),
                                     transforms.Normalize(mean = [ -0.49139968, -0.48215841, -0.44653091 ],
                                                          std = [ 1., 1., 1. ]),
                                    ])
     
-        inv_tensor = invTrans(t)
-        rgb_img = inv_tensor.permute(1,2,0)
+        inv_image = invTrans(image)
+        rgb_img = inv_image.permute(1,2,0)
 
-        input_tensor = torch.tensor(inv_tensor.unsqueeze(0))
-        target_layers = [model.layer3[-1]]
+        input_tensor = torch.tensor(inv_image.unsqueeze(0))
+        
+        target_layers = get_target_block(model,layer)
 
         cam = GradCAM(model=model, target_layers=target_layers, use_cuda=True)
 
         grayscale_cam = cam(input_tensor=input_tensor, targets=None, aug_smooth=True, eigen_smooth=True)
 
         grayscale_cam = grayscale_cam[0, :]
-        visualization = show_cam_on_image(rgb_img.numpy(), grayscale_cam, use_rgb=True, image_weight=transparency)
+        rgb_img = rgb_img.numpy()
+        rgb_img = rgb_img/np.amax(rgb_img) 
+        visualization = show_cam_on_image(rgb_img, grayscale_cam, use_rgb=True, image_weight=transparency)
         ax[i].imshow(visualization)
-        ax[i].set_title(f"{class_names[incorrect_pred[0][i]]}/{class_names[incorrect_labels[0][i]]}")
+        ax[i].set_title(f"{class_names[incorrect_pred[i].item()]}/{class_names[incorrect_labels[i].item()]}")
         ax[i].set( xticks=[], yticks=[])
     plt.axis('off')
     plt.tight_layout()
