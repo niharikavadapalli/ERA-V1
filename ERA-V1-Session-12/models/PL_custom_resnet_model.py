@@ -61,7 +61,7 @@ class LitResnet(LightningModule):
             momentum=0.9,
             weight_decay=5e-4,
         )
-        steps_per_epoch = math.ceil(45000 // self.BATCH_SIZE)
+        steps_per_epoch = math.ceil(45000 / self.BATCH_SIZE)
         scheduler_dict = {
             "scheduler": OneCycleLR(
                 optimizer,
