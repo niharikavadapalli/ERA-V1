@@ -25,13 +25,10 @@ utils/visualize.py - contains all the helper methods to help visualize data and 
 
 With the above model architecture and data augmentations with CIFAR10 dataset, I was able to achieve a best train accuracy of 96.15% and a best test accuracy of 93.11% in 24 epochs. Also the model seems to be consistently achieving an accuracy of more than 90% after 20 epochs where it first reached 91.3% as shown in below image. In this model, we used ADAM and CrossEntropyLoss functions to train the data.
 
-<img width="694" alt="Screenshot 2023-07-28 at 17 45 57" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/cbfa0f72-d03b-4314-bfce-0765aa22743c">
+<img width="736" alt="Screenshot 2023-08-07 at 09 37 15" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/18e6708e-2bef-41a5-b145-014254cae24c">
 
-<img width="610" alt="Screenshot 2023-07-28 at 17 46 16" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/e5b70601-d172-46e6-8391-e3791b49c059">
+<img width="1483" alt="Screenshot 2023-08-07 at 09 47 34" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/61f7e6b9-6e23-4dc4-98be-e0770e3489c6">
 
-The image below shows the code used for GradCam implementation.
-
-<img width="755" alt="Screenshot 2023-07-28 at 17 47 54" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/65327a63-84ed-48dc-a973-f68112be5f52">
 
 
 ## Observations and Results:
