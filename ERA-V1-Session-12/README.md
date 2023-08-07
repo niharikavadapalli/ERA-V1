@@ -1,6 +1,6 @@
-# ERA V1 Session 11
+# ERA V1 Session 12
 
-In this session, we focus mainly on analysing how GradCam can be used to visually see what the trained model is looking at an image to detect an object in it.
+In this session, we focus mainly on implementing our previous model in Session 10 using Pytorch lightening and we acheived an accuracy of 93% using this model.
 
 ## Model Skeleton:
 
