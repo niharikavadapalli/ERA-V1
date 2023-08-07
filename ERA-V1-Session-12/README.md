@@ -35,18 +35,20 @@ With the above model architecture and data augmentations with CIFAR10 dataset, I
 
 We can see that by using the above model we were able to acheive more than 90% accuracy. The below images shows how the test loss, test accuracy, train loss, train accuracy and learning rates changed across 20 epochs.
 
-<img width="932" alt="Screenshot 2023-07-28 at 17 49 47" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/c8f80d1b-1749-4e78-b384-da19fbc4a1b8">
+<img width="706" alt="Screenshot 2023-08-07 at 09 50 20" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/07db1ce9-d71b-4636-b93d-91da9e332aa2">
 
-<img width="458" alt="Screenshot 2023-07-28 at 17 49 57" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/f29f960e-fcd8-4e7e-99d5-da16ddf53df9">
+<img width="706" alt="Screenshot 2023-08-07 at 09 50 14" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/e269d70b-4e01-46fd-89f6-80a60160814f">
 
 
 The below image shows some of the misclassified images. Note that the title of each image below indicates predicted image label vs actual image label.
 
-<img width="630" alt="Screenshot 2023-07-28 at 17 50 19" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/630b4534-eeb0-4b0c-aa23-5f999299f3e0">
+<img width="686" alt="Screenshot 2023-08-07 at 09 49 40" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/2adea32c-3516-42d5-8723-2f4378cd6db0">
+
 
 I used GradCam to see what the model saw in the misclassified images and predicted wrong and the following image shows the heatmap of the area in the image which the model predicted as the object of interest.
 
-<img width="630" alt="Screenshot 2023-07-28 at 17 50 28" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/7e70e0f3-b6e6-43b6-88aa-09107bccd06c">
+<img width="706" alt="Screenshot 2023-08-07 at 09 49 50" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/426302a6-1af1-4a7c-b237-abceadf177db">
+
 
 As we can see from above image, we could improve our image augmentations to eliminate cases such as above. GradCam can be very useful to make such decisions and improve model in terms of correct prediction.
 
