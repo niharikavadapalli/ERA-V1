@@ -23,6 +23,21 @@ def get_incorrect_predictions(model, test_loader, device):
                     incorrect_labels.append(t.cpu())
     return incorrect_examples, incorrect_pred,  incorrect_labels
 
+def get_misclassified_images(model, test_loader, device, count):
+    incorrect_examples, incorrect_pred,  incorrect_labels = get_incorrect_predictions(model, test_loader, device)
+    misclassified_images = []
+    for i in range(count):
+        image = incorrect_examples[i].squeeze()
+        invTrans = transforms.Compose([ transforms.Normalize(mean = [ 0., 0., 0. ],
+                                                         std = [ 1/0.24703223, 1/0.24348513, 1/0.26158784 ]),
+                                    transforms.Normalize(mean = [ -0.49139968, -0.48215841, -0.44653091 ],
+                                                         std = [ 1., 1., 1. ]),
+                                   ])
+    
+        inv_image = invTrans(image)
+        misclassified_images.append(inv_image.permute(1,2,0))
+    return misclassified_images
+
 def plot_misclassified(model, test_loader, device, class_names, rows=3, columns=5):
     incorrect_examples, incorrect_pred,  incorrect_labels = get_incorrect_predictions(model, test_loader, device)
     fig,ax = plt.subplots(rows,columns)
@@ -110,6 +125,32 @@ def get_target_block(model, layer):
         return [model.model.convblock1[-1]]
     else:
         return None
+
+def get_grad_cam_images(model, test_loader, device, count, target_layers, transparency):
+    grad_cam_images = []
+    incorrect_examples, incorrect_pred,  incorrect_labels = get_incorrect_predictions(model, test_loader, device)
+    for i in range(count):
+        image = incorrect_examples[i].squeeze()
+        invTrans = transforms.Compose([ transforms.Normalize(mean = [ 0., 0., 0. ],
+                                                         std = [ 1/0.24703223, 1/0.24348513, 1/0.26158784 ]),
+                                    transforms.Normalize(mean = [ -0.49139968, -0.48215841, -0.44653091 ],
+                                                         std = [ 1., 1., 1. ]),
+                                   ])
+    
+        inv_image = invTrans(image)
+        rgb_img = inv_image.permute(1,2,0)
+
+        input_tensor = torch.tensor(inv_image.unsqueeze(0))
+
+        cam = GradCAM(model=model, target_layers=target_layers, use_cuda=True)
+
+        grayscale_cam = cam(input_tensor=input_tensor, targets=None, aug_smooth=True, eigen_smooth=True)
+
+        grayscale_cam = grayscale_cam[0, :]
+        rgb_img = rgb_img.numpy()
+        rgb_img = rgb_img/np.amax(rgb_img) 
+        visualization = show_cam_on_image(rgb_img, grayscale_cam, use_rgb=True, image_weight=transparency)
+        grad_cam_images.append(visualization)
 
 def plot_grad_cam(model, test_loader, device, class_names, rows=3, columns=5, transparency = 0.725, layer = 1):
     incorrect_examples, incorrect_pred,  incorrect_labels = get_incorrect_predictions(model, test_loader, device)
