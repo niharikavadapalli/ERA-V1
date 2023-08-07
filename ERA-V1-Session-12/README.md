@@ -4,37 +4,26 @@ In this session, we focus mainly on implementing our previous model in Session 1
 
 ## Model Skeleton:
 
-In this session, we used a ResNet 18 model to run on Cifar10 dataset using oneCycleLR policy to get faster and better accuracy followed by analysis using GradCam. The images below shows the model summary and skeleton.
+In this session, we used a custom ResNet  model to run on Cifar10 dataset using oneCycleLR policy to get faster and better accuracy followed by analysis using GradCam in pytorch lightening. The images below shows the model summary and skeleton.
 
-<img width="753" alt="Screenshot 2023-07-28 at 17 42 15" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/5218c812-adc1-4f86-a48c-a026244c6bbf">
+<img width="1125" alt="Screenshot 2023-08-07 at 09 39 13" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/3ee2f538-8262-4140-995b-e08bf2b14e2d">
 
-<img width="430" alt="Screenshot 2023-07-28 at 17 43 06" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/d8ae4998-9de7-4d02-9bc0-0486f2fe02b0">
-
-As shown above, the total parameters used are around 11.2M. 
-
-
-## Image Augmentation:
-
-I have used Albumentations library to augment the train dataset. The below image shows different transforms used for augmentation. The different types of transforms that are used are RandomCrop and CoarseDropOut.
-
-<img width="1324" alt="Screenshot 2023-07-28 at 17 44 33" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/f18f0d54-e3c9-475d-845f-f93ca70578de">
-
+As shown above, the total parameters used are around 6.5M. 
 
 ## Code
 
 ```
-main.py - contains methods to train and test, given a model, optimize, test and train loaders.
-utils/dataset.py - contains MyDataset class which is a placeholder for dataset
-models/resnet.py - contains actual ResNet model implementation in pytorch
-utils/transform.py - contains different transforms used to augment the data. This used Albumentation library for transform functions.
+PL_main.py - contains methods to create model, datamodule and train the model.
+models/PL_custom_resnet_model.py - contains custom resnet model in Pytorch lightening.
+models/custom_resnet_model.py - contains actual ResNet model implementation in pytorch
+utils/datamodule.py - contains creation of custom data module for cifar10 dataset
 utils/visualize.py - contains all the helper methods to help visualize data and results.
-utils/utilities.py - contains helper methods to implement OneCycleLR policy.
 
 ```
 
 ## Model Training
 
-With the above model architecture and data augmentations with CIFAR10 dataset, I was able to achieve a best train accuracy of 95.15% and a best test accuracy of 92.44% in 20 epochs. Also the model seems to be consistently achieving an accuracy of more than 90% after 18 epochs where it first reached 91.3% as shown in below image. In this model, we used ADAM and CrossEntropyLoss functions to train the data.
+With the above model architecture and data augmentations with CIFAR10 dataset, I was able to achieve a best train accuracy of 96.15% and a best test accuracy of 93.11% in 24 epochs. Also the model seems to be consistently achieving an accuracy of more than 90% after 20 epochs where it first reached 91.3% as shown in below image. In this model, we used ADAM and CrossEntropyLoss functions to train the data.
 
 <img width="694" alt="Screenshot 2023-07-28 at 17 45 57" src="https://github.com/niharikavadapalli/ERA-V1/assets/135390352/cbfa0f72-d03b-4314-bfce-0765aa22743c">
 
