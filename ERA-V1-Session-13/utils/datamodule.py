@@ -126,7 +126,7 @@ class YOLODataModule(LightningDataModule):
 
     def val_dataloader(self):
         val_data_loader = DataLoader(
-            dataset=self.train_eval_dataset,
+            dataset=self.val_dataset,
             batch_size=self.batch_size,
             num_workers=self.num_workers,
             pin_memory=self.pin_memory,
