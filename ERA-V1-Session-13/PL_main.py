@@ -48,7 +48,8 @@ def train_pl_model(model, datamodule, epochs = 2):
         devices=1 if torch.cuda.is_available() else None,  # limiting got iPython runs
         logger=CSVLogger(save_dir="logs/"),
         callbacks=[LearningRateMonitor(logging_interval="step"), TQDMProgressBar(refresh_rate=10)],
-        num_sanity_val_steps=0
+        num_sanity_val_steps=0,
+        precision=16
     )
     
     trainer.fit(model, datamodule)
