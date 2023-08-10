@@ -43,6 +43,10 @@ class LitYolov3(LightningModule):
         self.NUM_CLASSES = num_classes
         self.optimizer = optimizer
         self.scheduler = scheduler
+    
+    def set_optimizer_and_scheduler(self, optimizer, scheduler):
+        self.optimizer = optimizer
+        self.scheduler = scheduler
 
     def forward(self, x):
         return self.model.forward(x)
