@@ -7,7 +7,7 @@ import random
 import torch
 import torch.nn as nn
 import config
-from utils import intersection_over_union
+from utils.utils import intersection_over_union
 
 scaled_anchors = (
     torch.tensor(config.ANCHORS)
