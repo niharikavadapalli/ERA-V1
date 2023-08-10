@@ -30,7 +30,8 @@ class YOLODataModule(LightningDataModule):
                  test_transforms = None,
                  val_split=0.2,
                  num_workers = 1,
-                 pin_memory = False):
+                 pin_memory = False,
+                 batch_size = 32):
 
 
         super().__init__()
@@ -47,6 +48,7 @@ class YOLODataModule(LightningDataModule):
         self.num_workers = num_workers
         self.pin_memory = pin_memory
         self.data_dir = config.DATASET
+        self.batch_size = batch_size
 
     def get_dataset_train(self):
         return YOLODataset( self.train_csv_path,
