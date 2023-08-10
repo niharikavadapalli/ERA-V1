@@ -6,7 +6,7 @@ instead of BinaryCrossEntropy.
 import random
 import torch
 import torch.nn as nn
-import config
+import utils.config as config
 from utils.utils import intersection_over_union
 
 scaled_anchors = (
