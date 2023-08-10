@@ -34,7 +34,7 @@ class LitYolov3(LightningModule):
         self.loss_criterion = loss_criterion
         self.scaled_anchors = scaled_anchors
         self.threshold = threshold
-        self.model = YOLOv3(num_classes)
+        self.model = YOLOv3(num_classes=num_classes)
         self.BATCH_SIZE = BATCH_SIZE
         self.best_lr = best_lr
         self.NUM_WORKERS = NUM_WORKERS
