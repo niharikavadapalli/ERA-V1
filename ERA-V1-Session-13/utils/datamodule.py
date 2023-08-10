@@ -96,12 +96,7 @@ class YOLODataModule(LightningDataModule):
 
         return splits
 
-    def prepare_data(self):
-        # Download the dataset
-        YOLODataset(self.data_dir, train=True, download=False)
-        YOLODataset(self.data_dir, train=False, download=False)
-        
-    
+
     def setup(self, stage=None):
         # Assign train/val datasets
         if stage == 'fit' or stage is None:
