@@ -55,7 +55,7 @@ class LitYolov3(LightningModule):
         x, y = batch
         y0, y1, y2 = (y[0],y[1],y[2])
 
-        out = self(x)
+        out = self.forward(x)
         loss = (
                 self.loss_criterion(out[0], y0, self.scaled_anchors[0]) +
                 self.loss_criterion(out[1], y1, self.scaled_anchors[1]) +
