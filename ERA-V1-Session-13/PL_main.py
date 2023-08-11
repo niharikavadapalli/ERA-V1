@@ -44,20 +44,21 @@ def create_pl_model(loss_criterion,
 def train_pl_model(model, datamodule, epochs = 2):
     trainer = Trainer(
         max_epochs=epochs,
-        accelerator="auto",
-        devices=1 if torch.cuda.is_available() else None,  # limiting got iPython runs
+        accelerator="gpu",
+        devices=2 if torch.cuda.is_available() else None,
+        strategy="ddp",
         logger=CSVLogger(save_dir="logs/"),
         callbacks=[LearningRateMonitor(logging_interval="step"), TQDMProgressBar(refresh_rate=10)],
         num_sanity_val_steps=0,
         precision=16
     )
     
-    trainer.fit(model, datamodule)
-    trainer.test(model, datamodule=datamodule)
+    trainer.fit(model, datamodule.train_dataloader, datamodule.val_dataloader)
+    trainer.test(model, datamodule.test_dataloader)
     return trainer
 
 def get_max_lr(dummy_model, datamodule,optimizer, criterion, BATCH_SIZE,NUM_WORKERS, device):
-    train_loader = DataLoader(datamodule.get_dataset_train(), batch_size=BATCH_SIZE, num_workers=NUM_WORKERS, shuffle=True)
+    train_loader = datamodule.train_dataloader()
     lr_finder = LRFinder(dummy_model.model, optimizer, criterion, device) 
     lr_finder.range_test(train_loader, end_lr=10, num_iter=200, step_mode='exp')
     best_lr = lr_finder.plot()
