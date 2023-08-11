@@ -16,6 +16,7 @@ from pytorch_lightning.loggers import CSVLogger
 from pytorch_lightning.callbacks import LearningRateMonitor
 from pytorch_lightning.callbacks.progress import TQDMProgressBar
 from torch_lr_finder import LRFinder
+from utils.utils import save_checkpoint
 
 
 def create_pl_model(loss_criterion,
@@ -54,6 +55,7 @@ def train_pl_model(model, datamodule, epochs = 2):
     
     trainer.fit(model, datamodule.train_dataloader(), datamodule.val_dataloader())
     trainer.test(model, datamodule.test_dataloader())
+    save_checkpoint(model, model.optimizer, model.current_epoch, filename=f"checkpoint_{model.current_epoch}.pth.tar")
     return trainer
 
 def get_max_lr(dummy_model, datamodule,optimizer, criterion, BATCH_SIZE,NUM_WORKERS, device):
