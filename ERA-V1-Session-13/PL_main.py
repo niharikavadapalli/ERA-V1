@@ -20,7 +20,7 @@ from utils.utils import save_checkpoint
 
 
 class SaveCallback(Callback):
-    def on_epoch_end(self, trainer, model):
+    def on_validation_epoch_end(self, trainer, model):
         save_checkpoint(model, model.optimizer, model.current_epoch, filename=f"checkpoint_{model.current_epoch}.pth.tar")
         print("Model saved!")
 
