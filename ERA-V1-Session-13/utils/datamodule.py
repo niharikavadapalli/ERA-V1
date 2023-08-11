@@ -122,6 +122,7 @@ class YOLODataModule(LightningDataModule):
             pin_memory=self.pin_memory,
             shuffle=True,
             drop_last=False)
+        self.train_data_loader = train_data_loader
         return train_data_loader
 
     def val_dataloader(self):
@@ -132,6 +133,7 @@ class YOLODataModule(LightningDataModule):
             pin_memory=self.pin_memory,
             shuffle=False,
             drop_last=False)
+        self.val_data_loader = val_data_loader
         return val_data_loader
 
     def test_dataloader(self):
@@ -142,4 +144,5 @@ class YOLODataModule(LightningDataModule):
             pin_memory=self.pin_memory,
             shuffle=False,
             drop_last=False)
+        self.test_data_loader = test_data_loader
         return test_data_loader

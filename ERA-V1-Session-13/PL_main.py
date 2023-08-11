@@ -52,8 +52,8 @@ def train_pl_model(model, datamodule, epochs = 2):
         precision=16
     )
     
-    trainer.fit(model, datamodule.train_dataloader, datamodule.val_dataloader)
-    trainer.test(model, datamodule.test_dataloader)
+    trainer.fit(model, datamodule.train_dataloader(), datamodule.val_dataloader())
+    trainer.test(model, datamodule.test_dataloader())
     return trainer
 
 def get_max_lr(dummy_model, datamodule,optimizer, criterion, BATCH_SIZE,NUM_WORKERS, device):
