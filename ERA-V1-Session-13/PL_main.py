@@ -13,11 +13,16 @@ from torch.utils.data import DataLoader
 from models.PL_yolov3 import LitYolov3
 from pytorch_lightning import Trainer
 from pytorch_lightning.loggers import CSVLogger
-from pytorch_lightning.callbacks import LearningRateMonitor
+from pytorch_lightning.callbacks import LearningRateMonitor, Callback
 from pytorch_lightning.callbacks.progress import TQDMProgressBar
 from torch_lr_finder import LRFinder
 from utils.utils import save_checkpoint
 
+
+class SaveCallback(Callback):
+    def on_epoch_end(self, trainer, model):
+        save_checkpoint(model, model.optimizer, model.current_epoch, filename=f"checkpoint_{model.current_epoch}.pth.tar")
+        print("Model saved!")
 
 def create_pl_model(loss_criterion,
                     scaled_anchors,
@@ -48,14 +53,13 @@ def train_pl_model(model, datamodule, epochs = 2):
         accelerator="auto",
         devices=1 if torch.cuda.is_available() else None,
         logger=CSVLogger(save_dir="logs/"),
-        callbacks=[LearningRateMonitor(logging_interval="step"), TQDMProgressBar(refresh_rate=10)],
+        callbacks=[LearningRateMonitor(logging_interval="step"), TQDMProgressBar(refresh_rate=10), SaveCallback()],
         num_sanity_val_steps=0,
         precision=16
     )
     
     trainer.fit(model, datamodule.train_dataloader(), datamodule.val_dataloader())
     trainer.test(model, datamodule.test_dataloader())
-    save_checkpoint(model, model.optimizer, model.current_epoch, filename=f"checkpoint_{model.current_epoch}.pth.tar")
     return trainer
 
 def get_max_lr(dummy_model, datamodule,optimizer, criterion, BATCH_SIZE,NUM_WORKERS, device):
