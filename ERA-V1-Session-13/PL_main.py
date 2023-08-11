@@ -44,7 +44,7 @@ def create_pl_model(loss_criterion,
 def train_pl_model(model, datamodule, epochs = 2):
     trainer = Trainer(
         max_epochs=epochs,
-        accelerator="gpu",
+        accelerator="auto",
         devices=2 if torch.cuda.is_available() else None,
         logger=CSVLogger(save_dir="logs/"),
         callbacks=[LearningRateMonitor(logging_interval="step"), TQDMProgressBar(refresh_rate=10)],
