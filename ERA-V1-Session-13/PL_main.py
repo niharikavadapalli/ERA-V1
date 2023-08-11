@@ -21,8 +21,11 @@ from utils.utils import save_checkpoint
 
 class SaveCallback(Callback):
     def on_validation_epoch_end(self, trainer, model):
-        save_checkpoint(model, model.optimizer, model.current_epoch, filename=f"checkpoint_{model.current_epoch}.pth.tar")
-        print("Model saved!")
+        if (model.current_epoch + 1)%5 == 0:
+            save_checkpoint(model, model.optimizer, model.current_epoch, filename=f"checkpoint_{model.current_epoch}.pth.tar")
+            print("Model saved!")
+        else:
+            print("skipping save")
 
 def create_pl_model(loss_criterion,
                     scaled_anchors,
@@ -54,8 +57,7 @@ def train_pl_model(model, datamodule, epochs = 2):
         devices=1 if torch.cuda.is_available() else None,
         logger=CSVLogger(save_dir="logs/"),
         callbacks=[LearningRateMonitor(logging_interval="step"), TQDMProgressBar(refresh_rate=10), SaveCallback()],
-        num_sanity_val_steps=0,
-        precision=16
+        num_sanity_val_steps=0
     )
     
     trainer.fit(model, datamodule.train_dataloader(), datamodule.val_dataloader())

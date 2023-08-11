@@ -11,7 +11,7 @@ import numpy as np
 from typing import List, Any
 from torch.utils.data import Dataset, DataLoader, random_split
 from pytorch_lightning import LightningDataModule, seed_everything
-from utils.dataset_org import YOLODataset
+from utils.dataset import YOLODataset
 import utils.config as config
 
 
