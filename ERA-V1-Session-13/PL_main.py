@@ -45,7 +45,7 @@ def train_pl_model(model, datamodule, epochs = 2):
     trainer = Trainer(
         max_epochs=epochs,
         accelerator="auto",
-        devices=2 if torch.cuda.is_available() else None,
+        devices=1 if torch.cuda.is_available() else None,
         logger=CSVLogger(save_dir="logs/"),
         callbacks=[LearningRateMonitor(logging_interval="step"), TQDMProgressBar(refresh_rate=10)],
         num_sanity_val_steps=0,
