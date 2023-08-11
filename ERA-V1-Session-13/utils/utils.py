@@ -422,13 +422,17 @@ def get_mean_std(loader):
 
 
 def save_checkpoint(model, optimizer, epoch, filename="my_checkpoint.pth.tar"):
-    print("=> Saving checkpoint")
-    checkpoint = {
-        "state_dict": model.state_dict(),
-        "optimizer": optimizer.state_dict(),
-        "epoch": epoch
-    }
-    torch.save(checkpoint, filename)
+    if (epoch + 1)%5 == 0:
+        print("=> Saving checkpoint")
+        checkpoint = {
+            "state_dict": model.state_dict(),
+            "optimizer": optimizer.state_dict(),
+            "scheduler": model.scheduler.state_dict(),
+            "epoch": epoch
+        }
+        torch.save(checkpoint, filename)
+    else:
+        print("Skipping save from save_checkpoint method")
 
 
 def load_checkpoint(checkpoint_file, model, optimizer, lr):
