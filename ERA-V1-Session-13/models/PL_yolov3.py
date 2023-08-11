@@ -89,9 +89,9 @@ class LitYolov3(LightningModule):
             class_acc = (correct_class/(tot_class_preds+1e-16))*100
             no_obj_acc = (correct_noobj/(tot_noobj+1e-16))*100
             obj_acc = (correct_obj/(tot_obj+1e-16))*100
-            self.log(f"Class accuracy is: {class_acc:2f}%", prog_bar=True)
-            self.log(f"No obj accuracy is: {no_obj_acc:2f}%", prog_bar=True)
-            self.log(f"Obj accuracy is: {obj_acc:2f}%", prog_bar=True)
+            self.log("Class accuracy is: ", class_acc, prog_bar=True)
+            self.log("No obj accuracy is: ", no_obj_acc, prog_bar=True)
+            self.log("Obj accuracy is: ", obj_acc, prog_bar=True)
 
     def validation_step(self, batch, batch_idx):
         self.evaluate(batch, "val")
