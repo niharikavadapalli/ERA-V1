@@ -98,6 +98,10 @@ class LitYolov3(LightningModule):
 
     def test_step(self, batch, batch_idx):
         self.evaluate(batch, "test")
+    
+    def set_test_train_loaders(self, data_module):
+        self.test_data_loader = data_module.test_dataloader()
+        self.train_data_loader = data_module.train_dataloader()
 
     def configure_optimizers(self):
         scheduler_dict = {

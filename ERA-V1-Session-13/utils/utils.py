@@ -422,7 +422,7 @@ def get_mean_std(loader):
 
 
 def save_checkpoint(model, optimizer, epoch, filename="my_checkpoint.pth.tar"):
-    if (epoch + 1)%5 == 0:
+    if (epoch)%5 == 0:
         print("=> Saving checkpoint")
         checkpoint = {
             "state_dict": model.state_dict(),
@@ -431,6 +431,11 @@ def save_checkpoint(model, optimizer, epoch, filename="my_checkpoint.pth.tar"):
             "epoch": epoch
         }
         torch.save(checkpoint, filename)
+        scaled_anchors = (
+            torch.tensor(config.ANCHORS)
+            * torch.tensor(config.S).unsqueeze(1).unsqueeze(1).repeat(1, 3, 2)
+        ).to(config.DEVICE)
+        plot_couple_examples_test(model, model.train_data_loader, 0.6, 0.5, scaled_anchors)
     else:
         print("Skipping save from save_checkpoint method")
 
@@ -546,10 +551,11 @@ def plot_couple_examples_test(model, loader, thresh, iou_thresh, anchors):
                 bboxes[idx] += box
 
     for i in range(batch_size//4):
+        get_index = random.randrange(len(bboxes))
         nms_boxes = non_max_suppression(
-            bboxes[i], iou_threshold=iou_thresh, threshold=thresh, box_format="midpoint",
+            bboxes[get_index], iou_threshold=iou_thresh, threshold=thresh, box_format="midpoint",
         )
-        plot_image(x[i].permute(1,2,0).detach().cpu(), nms_boxes)
+        plot_image(x[get_index].permute(1,2,0).detach().cpu(), nms_boxes)
 
 def seed_everything(seed=42):
     os.environ['PYTHONHASHSEED'] = str(seed)

@@ -21,7 +21,7 @@ from utils.utils import save_checkpoint
 
 class SaveCallback(Callback):
     def on_validation_epoch_end(self, trainer, model):
-        if (model.current_epoch + 1)%5 == 0:
+        if (model.current_epoch)%5 == 0:
             save_checkpoint(model, model.optimizer, model.current_epoch, filename=f"checkpoint_{model.current_epoch}.pth.tar")
             print("Model saved!")
         else:
@@ -51,6 +51,7 @@ def create_pl_model(loss_criterion,
                         num_classes)
 
 def train_pl_model(model, datamodule, epochs = 2):
+    model.set_test_train_loaders(datamodule)
     trainer = Trainer(
         max_epochs=epochs,
         accelerator="auto",
