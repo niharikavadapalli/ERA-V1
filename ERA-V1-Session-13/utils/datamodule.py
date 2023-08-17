@@ -12,6 +12,7 @@ from typing import List, Any
 from torch.utils.data import Dataset, DataLoader, random_split
 from pytorch_lightning import LightningDataModule, seed_everything
 from utils.dataset import YOLODataset
+from utils.dataset_org import YOLODataset_org
 import utils.config as config
 
 
@@ -59,7 +60,7 @@ class YOLODataModule(LightningDataModule):
                 anchors=self.anchors)
 
     def get_dataset_test(self):
-        return YOLODataset(
+        return YOLODataset_org(
             self.test_csv_path,
             transform=self.test_transforms,
             S=self.S,

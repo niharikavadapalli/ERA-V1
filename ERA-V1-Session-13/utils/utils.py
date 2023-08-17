@@ -422,7 +422,7 @@ def get_mean_std(loader):
 
 
 def save_checkpoint(model, optimizer, epoch, filename="my_checkpoint.pth.tar"):
-    if (epoch)%5 == 0:
+    if (epoch + 1)%5 == 0:
         print("=> Saving checkpoint")
         checkpoint = {
             "state_dict": model.state_dict(),
