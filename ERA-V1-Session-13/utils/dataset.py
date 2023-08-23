@@ -32,6 +32,7 @@ class YOLODataset(Dataset):
         S=[13, 26, 52],
         C=20,
         transform=None,
+        mosaic_probability = 0.75,
     ):
         self.annotations = pd.read_csv(csv_file)
         self.img_dir = img_dir
@@ -45,11 +46,19 @@ class YOLODataset(Dataset):
         self.num_anchors_per_scale = self.num_anchors // 3
         self.C = C
         self.ignore_iou_thresh = 0.5
+        self.mosaic_probability = mosaic_probability
 
     def __len__(self):
         return len(self.annotations)
     
     def load_mosaic(self, index):
+        if np.random.random() > self.mosaic_probability:
+            label_path = os.path.join(self.label_dir, self.annotations.iloc[index, 1])
+            bboxes = np.roll(np.loadtxt(fname=label_path, delimiter=" ", ndmin=2), 4, axis=1).tolist()
+            img_path = os.path.join(self.img_dir, self.annotations.iloc[index, 0])
+            image = np.array(Image.open(img_path).convert("RGB"))
+            return image, bboxes  
+        
         # YOLOv5 4-mosaic loader. Loads 1 image + 3 random images into a 4-image mosaic
         labels4 = []
         s = self.image_size
