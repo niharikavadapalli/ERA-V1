@@ -92,9 +92,6 @@ class LitYolov3(LightningModule):
             self.log(f"{stage}_Class_Accuracy",class_acc, prog_bar=True)
             self.log(f"{stage}_No_Obj_Accuracy", no_obj_acc, prog_bar=True)
             self.log(f"{stage}_Obj_Accuracy",obj_acc, prog_bar=True)
-            print(f"epoch: {self.trainer.current_epoch}  {stage}_Class_Accuracy: {class_acc}")
-            print(f"epoch: {self.trainer.current_epoch}  {stage}_No_Obj_Accuracy: {no_obj_acc}")
-            print(f"epoch: {self.trainer.current_epoch}  {stage}_Obj_Accuracy: {obj_acc}")
 
     def validation_step(self, batch, batch_idx):
         self.evaluate(batch, "val")
