@@ -52,7 +52,7 @@ class YOLODataModule(LightningDataModule):
         self.batch_size = batch_size
 
     def get_dataset_train(self):
-        return YOLODataset( self.train_csv_path,
+        return YOLODataset_org( self.train_csv_path,
                 transform = self.train_transforms,
                 S=self.S,
                 img_dir=self.img_dir,
