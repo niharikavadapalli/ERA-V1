@@ -254,8 +254,8 @@ def collate(batch):
     
         # Double check the size of the tensors to make sure they are all seq_len long
         assert encoder_input.size(0) == encoder_input_max
-        assert decoder_input.size(0) == encoder_input_max
-        assert label.size(0) == encoder_input_max
+        assert decoder_input.size(0) == decoder_input_max
+        assert label.size(0) == decoder_input_max
     
         encoder_inputs.append(encoder_input)
         decoder_inputs.append(decoder_input)
