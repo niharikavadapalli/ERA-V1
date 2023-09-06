@@ -201,8 +201,8 @@ def get_ds(config, isFiltered = True):
 
 def collate(batch):
     
-    encoder_input_max = max(x["encoder_input"] for x in batch)
-    decoder_input_max = max(x["decoder_input"] for x in batch)
+    encoder_input_max = max(len(x["encoder_input"]) for x in batch)
+    decoder_input_max = max(len(x["decoder_input"]) for x in batch)
     
     encoder_inputs = []
     decoder_inputs = []
