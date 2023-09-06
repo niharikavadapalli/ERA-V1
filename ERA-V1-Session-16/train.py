@@ -219,7 +219,7 @@ def collate(batch):
         dec_num_padding_tokens = decoder_input_max - len(b["decoder_input"]) - 1
 
         # Make sure that the number of padding tokens is not negative. If it is, the sentence is too long
-        if enc_num_padding_tokens < 0 or dec_num_padding_tokens < 0:
+        if enc_num_padding_tokens + 2 < 0 or dec_num_padding_tokens + 1 < 0:
             raise ValueError("Sentence is too long!")
         # Add <s> and </s> token
         encoder_input = torch.cat(
