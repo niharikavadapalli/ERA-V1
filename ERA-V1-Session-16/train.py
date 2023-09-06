@@ -20,6 +20,7 @@ import warnings
 from tqdm import tqdm
 import os
 from pathlib import Path
+import token
 
 # Huggingface datasets and tokenizers
 from datasets import load_dataset, load_from_disk
@@ -199,25 +200,70 @@ def get_ds(config, isFiltered = True):
 
 
 def collate(batch):
-    encoder_input_max = max(x["encoder_str_length"] for x in batch)
-    decoder_input_max = max(x["decoder_str_length"] for x in batch)
+    
+    encoder_input_max = max(x["encoder_input"] for x in batch)
+    decoder_input_max = max(x["decoder_input"] for x in batch)
     
     encoder_inputs = []
     decoder_inputs = []
     encoder_mask = []
     decoder_mask = []
-    label = []
-    src_text = []
-    tgt_text = []
+    labels = []
+    src_texts = []
+    tgt_texts = []
     
     for b in batch:
-        encoder_inputs.append(b["encoder_input"][:encoder_input_max])
-        decoder_inputs.append(b["decoder_input"][:decoder_input_max])
-        encoder_mask.append((b["encoder_mask"][0, 0, :encoder_input_max]).unsqueeze(0).unsqueeze(0).unsqueeze(0).int())
-        decoder_mask.append((b["decoder_mask"][0, :decoder_input_max, :decoder_input_max]).unsqueeze(0).unsqueeze(0))
-        label.append(b["label"][:decoder_input_max])
-        src_text.append(b["src_text"])
-        tgt_text.append(b["tgt_text"])
+        # Add sos, eos and padding to each sentence
+        enc_num_padding_tokens = encoder_input_max - len(b["encoder_input"]) - 2 # we will add <s> and </s>
+        # we will only add only the <s> token to the decoder
+        dec_num_padding_tokens = decoder_input_max - len(b["decoder_input"]) - 1
+
+        # Make sure that the number of padding tokens is not negative. If it is, the sentence is too long
+        if enc_num_padding_tokens < 0 or dec_num_padding_tokens < 0:
+            raise ValueError("Sentence is too long!")
+        # Add <s> and </s> token
+        encoder_input = torch.cat(
+            [
+                b["sos_token"],
+                b["encoder_input"],
+                b["eos_token"],
+                torch.tensor([b["pad_token"]]*enc_num_padding_tokens, dtype=torch.int64),
+            ],
+            dim = 0,
+        )
+    
+        # Add only the <s>
+        decoder_input = torch.cat(
+            [
+                b["sos_token"],
+                b["decoder_input"],
+                torch.tensor([b["pad_token"]]*dec_num_padding_tokens, dtype=torch.int64),
+            ],
+            dim=0,
+        )
+    
+        # Add only </s> token
+        label = torch.cat(
+            [
+                b["decoder_input"],
+                b["eos_token"],
+                torch.tensor([b["pad_token"]] * dec_num_padding_tokens, dtype=torch.int64),
+            ],
+            dim=0,
+        )
+    
+        # Double check the size of the tensors to make sure they are all seq_len long
+        assert encoder_input.size(0) == encoder_input_max
+        assert decoder_input.size(0) == encoder_input_max
+        assert label.size(0) == encoder_input_max
+    
+        encoder_inputs.append(encoder_input)
+        decoder_inputs.append(decoder_input)
+        encoder_mask.append((encoder_input != b["pad_token"]).unsqueeze(0).unsqueeze(0).int())
+        decoder_mask.append((decoder_input != b["pad_token"]).unsqueeze(0).unsqueeze(0).int() & causal_mask(decoder_input.size(0)))
+        labels.append(label)
+        src_texts.append(b["src_text"])
+        tgt_texts.append(b["tgt_text"])
         
     return {
             "encoder_input": torch.vstack(encoder_inputs),
@@ -225,8 +271,8 @@ def collate(batch):
             "encoder_mask": torch.vstack(encoder_mask),
             "decoder_mask": torch.vstack(decoder_mask),
             "label": torch.vstack(label),
-            "src_text": src_text,
-            "tgt_text": tgt_text
+            "src_text": src_texts,
+            "tgt_text": tgt_texts
         }
 
 def get_model(config, vocab_src_len, vocab_tgt_len):
