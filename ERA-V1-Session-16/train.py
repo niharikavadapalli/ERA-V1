@@ -253,6 +253,9 @@ def collate(batch):
         )
     
         # Double check the size of the tensors to make sure they are all seq_len long
+        print("Enc inp is {0}, size is {1},  encoder_input_max is {2}", encoder_input, encoder_input.size(0), encoder_input_max)
+        print("Dec inp is {0}, size is {1},  decoder_input_max is {2}", decoder_input, decoder_input.size(0), decoder_input_max)
+        print("label inp is {0}, size is {1},  elabel_input_max is {2}", label, label.size(0), decoder_input_max)
         assert encoder_input.size(0) == encoder_input_max
         assert decoder_input.size(0) == decoder_input_max
         assert label.size(0) == decoder_input_max
