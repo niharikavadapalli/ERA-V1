@@ -201,8 +201,8 @@ def get_ds(config, isFiltered = True):
 
 def collate(batch):
     
-    encoder_input_max = max(len(x["encoder_input"]) for x in batch)
-    decoder_input_max = max(len(x["decoder_input"]) for x in batch)
+    encoder_input_max = max(len(x["encoder_input"]) for x in batch) + 2
+    decoder_input_max = max(len(x["decoder_input"]) for x in batch) + 1
     
     encoder_inputs = []
     decoder_inputs = []
@@ -219,7 +219,7 @@ def collate(batch):
         dec_num_padding_tokens = decoder_input_max - len(b["decoder_input"]) - 1
 
         # Make sure that the number of padding tokens is not negative. If it is, the sentence is too long
-        if enc_num_padding_tokens + 2 < 0 or dec_num_padding_tokens + 1 < 0:
+        if enc_num_padding_tokens < 0 or dec_num_padding_tokens < 0:
             raise ValueError("Sentence is too long!")
         # Add <s> and </s> token
         encoder_input = torch.cat(
@@ -253,9 +253,9 @@ def collate(batch):
         )
     
         # Double check the size of the tensors to make sure they are all seq_len long
-        print("Enc inp is {0}, size is {1},  encoder_input_max is {2}", encoder_input, encoder_input.size(0), encoder_input_max)
-        print("Dec inp is {0}, size is {1},  decoder_input_max is {2}", decoder_input, decoder_input.size(0), decoder_input_max)
-        print("label inp is {0}, size is {1},  elabel_input_max is {2}", label, label.size(0), decoder_input_max)
+        # print("Enc inp is {0}, size is {1},  encoder_input_max is {2}", encoder_input, encoder_input.size(0), encoder_input_max)
+        # print("Dec inp is {0}, size is {1},  decoder_input_max is {2}", decoder_input, decoder_input.size(0), decoder_input_max)
+        # print("label inp is {0}, size is {1},  elabel_input_max is {2}", label, label.size(0), decoder_input_max)
         assert encoder_input.size(0) == encoder_input_max
         assert decoder_input.size(0) == decoder_input_max
         assert label.size(0) == decoder_input_max
