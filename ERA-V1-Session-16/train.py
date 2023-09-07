@@ -251,6 +251,9 @@ def collate(batch):
             ],
             dim=0,
         )
+        
+        encoder_mask = (encoder_input != b["pad_token"]).unsqueeze(0).unsqueeze(0).int()
+        decoder_mask = (decoder_input != b["pad_token"]).unsqueeze(0).unsqueeze(0).int() & causal_mask(decoder_input.size(0))
     
         # Double check the size of the tensors to make sure they are all seq_len long
         # print("Enc inp is {0}, size is {1},  encoder_input_max is {2}", encoder_input, encoder_input.size(0), encoder_input_max)
@@ -262,8 +265,8 @@ def collate(batch):
     
         encoder_inputs.append(encoder_input)
         decoder_inputs.append(decoder_input)
-        encoder_mask.append((encoder_input != b["pad_token"]).unsqueeze(0).unsqueeze(0).int())
-        decoder_mask.append((decoder_input != b["pad_token"]).unsqueeze(0).unsqueeze(0).int() & causal_mask(decoder_input.size(0)))
+        encoder_mask.append(encoder_mask.unsqueeze(0))
+        decoder_mask.append(decoder_mask.unsqueeze(0))
         labels.append(label)
         src_texts.append(b["src_text"])
         tgt_texts.append(b["tgt_text"])
