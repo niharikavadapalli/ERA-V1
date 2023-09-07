@@ -170,8 +170,8 @@ def get_ds(config, isFiltered = True):
     if isFiltered:
         sorted_train_ds = sorted(train_ds_raw, key=lambda x: len(x["translation"][config['lang_src']]))
         filtered_sorted_train_ds = [k for k in sorted_train_ds if len(k["translation"][config['lang_src']]) < 150]
-        filtered_sorted_train_ds = [k for k in sorted_train_ds if len(k["translation"][config['lang_tgt']]) < 150]
-        filtered_sorted_train_ds = [k for k in sorted_train_ds if len(k["translation"][config['lang_src']]) + 10 > len(k["translation"][config['lang_tgt']])]
+        filtered_sorted_train_ds = [k for k in filtered_sorted_train_ds if len(k["translation"][config['lang_tgt']]) < 150]
+        filtered_sorted_train_ds = [k for k in filtered_sorted_train_ds if len(k["translation"][config['lang_src']]) + 10 > len(k["translation"][config['lang_tgt']])]
         train_ds = BilingualDataset(filtered_sorted_train_ds, tokenizer_src, tokenizer_tgt, config['lang_src'], config['lang_tgt'], config['seq_len'])
         
     else:
