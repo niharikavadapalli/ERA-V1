@@ -206,8 +206,8 @@ def collate(batch):
     
     encoder_inputs = []
     decoder_inputs = []
-    encoder_mask = []
-    decoder_mask = []
+    encoder_masks = []
+    decoder_masks = []
     labels = []
     src_texts = []
     tgt_texts = []
@@ -265,8 +265,8 @@ def collate(batch):
     
         encoder_inputs.append(encoder_input)
         decoder_inputs.append(decoder_input)
-        encoder_mask.append(encoder_mask.unsqueeze(0))
-        decoder_mask.append(decoder_mask.unsqueeze(0))
+        encoder_masks.append(encoder_mask.unsqueeze(0))
+        decoder_masks.append(decoder_mask.unsqueeze(0))
         labels.append(label)
         src_texts.append(b["src_text"])
         tgt_texts.append(b["tgt_text"])
@@ -274,8 +274,8 @@ def collate(batch):
     return {
             "encoder_input": torch.vstack(encoder_inputs),
             "decoder_input": torch.vstack(decoder_inputs),
-            "encoder_mask": torch.vstack(encoder_mask),
-            "decoder_mask": torch.vstack(decoder_mask),
+            "encoder_mask": torch.vstack(encoder_masks),
+            "decoder_mask": torch.vstack(decoder_masks),
             "label": torch.vstack(labels),
             "src_text": src_texts,
             "tgt_text": tgt_texts
