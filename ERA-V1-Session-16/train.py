@@ -194,7 +194,7 @@ def get_ds(config, isFiltered = True):
 
 
     train_dataloader = DataLoader(train_ds, batch_size=config['batch_size'], shuffle=True, collate_fn=collate)
-    val_dataloader = DataLoader(val_ds, batch_size=1, shuffle=True)
+    val_dataloader = DataLoader(val_ds, batch_size=1, shuffle=True, collate_fn=collate)
 
     return train_dataloader, val_dataloader, tokenizer_src, tokenizer_tgt
 
