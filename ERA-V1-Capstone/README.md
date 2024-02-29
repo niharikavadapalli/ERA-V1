@@ -11,13 +11,13 @@ We use the [LitGPT](https://github.com/Lightning-AI/lit-gpt/blob/main/README.md)
 We only train it till the loss has reduced and demonstrate that given more GPU resources, we can continue to fully pretrain this model. Below are the training logs for this pretraining:
 
 ```
-iter 0 step 1: loss 10.9833, LR: 0.000000, iter time: 1964.85ms (optimizer.step)
-iter 100 step 101: loss 7.0670, LR: 0.000300, iter time: 625.12ms (optimizer.step)
-iter 200 step 201: loss 6.1442, LR: 0.000600, iter time: 672.23ms (optimizer.step)
-iter 300 step 301: loss 6.3695, LR: 0.000900, iter time: 663.85ms (optimizer.step)
-iter 400 step 401: loss 6.4042, LR: 0.001200, iter time: 659.47ms (optimizer.step)
-iter 500 step 501: loss 5.9287, LR: 0.001500, iter time: 656.67ms (optimizer.step)
-iter 600 step 601: loss 6.1363, LR: 0.001800, iter time: 655.95ms (optimizer.step)
+iter 0 step 1: loss 13.9633, LR: 0.000000, iter time: 1964.85ms (optimizer.step)
+iter 100 step 101: loss 9.0640, LR: 0.000300, iter time: 675.12ms (optimizer.step)
+iter 200 step 201: loss 8.1102, LR: 0.000600, iter time: 652.23ms (optimizer.step)
+iter 300 step 301: loss 6.9695, LR: 0.000900, iter time: 623.85ms (optimizer.step)
+iter 400 step 401: loss 6.7052, LR: 0.001200, iter time: 639.47ms (optimizer.step)
+iter 500 step 501: loss 6.0287, LR: 0.001500, iter time: 686.67ms (optimizer.step)
+iter 600 step 601: loss 5.9963, LR: 0.001800, iter time: 695.95ms (optimizer.step)
 ```
  
  # Stage 1: Train the LLM to know/understand the images
