@@ -1,0 +1,345 @@
+Epoch 0:  65%|█████████████████████████████▎               | 77000/118169 [6:21:16<3:23:51,  3.37it/s, v_num=m0xd, train_loss=2.290, train_loss_auto=1.740]Step: 77001: train_loss=1.7999                                                                                                                             
+Epoch 0:  66%|█████████████████████████████▌               | 77500/118169 [6:23:30<3:21:15,  3.37it/s, v_num=m0xd, train_loss=2.030, train_loss_auto=1.770]Step: 77501: train_loss=2.2005
+Epoch 0:  66%|█████████████████████████████▋               | 78000/118169 [6:25:41<3:18:37,  3.37it/s, v_num=m0xd, train_loss=1.860, train_loss_auto=1.840The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: A couple of grandfather clocks sitting next to a body of water.
+ predicted: A clock on a wooden stand in a pond.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: A tow truck has brought a small car into a busy shop.
+ predicted: Two old trucks parked next to each other.
+Epoch 0:  66%|█████████████████████████████▋               | 78000/118169 [6:26:05<3:18:50,  3.37it/s, v_num=m0xd, train_loss=1.860, train_loss_auto=1.840]Step: 78001: train_loss=1.9309                                                                                                                             
+Epoch 0:  66%|█████████████████████████████▉               | 78500/118169 [6:28:23<3:16:15,  3.37it/s, v_num=m0xd, train_loss=1.820, train_loss_auto=1.600]Step: 78501: train_loss=2.2948
+Epoch 0:  67%|██████████████████████████████               | 79000/118169 [6:30:39<3:13:41,  3.37it/s, v_num=m0xd, train_loss=2.030, train_loss_auto=2.110The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: A person is laying on the carpet using a cell phone
+ predicted: A woman sitting on a couch with a laptop on her lap.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: A couple of grandfather clocks sitting next to a body of water.
+ predicted: A clock on a tree in a pond.
+Epoch 0:  67%|██████████████████████████████               | 79000/118169 [6:31:02<3:13:52,  3.37it/s, v_num=m0xd, train_loss=2.030, train_loss_auto=2.110]Step: 79001: train_loss=1.8057                                                                                                                             
+Epoch 0:  67%|██████████████████████████████▎              | 79500/118169 [6:33:21<3:11:20,  3.37it/s, v_num=m0xd, train_loss=1.730, train_loss_auto=1.610]Step: 79501: train_loss=2.2415
+Epoch 0:  68%|██████████████████████████████▍              | 80000/118169 [6:35:44<3:08:48,  3.37it/s, v_num=m0xd, train_loss=1.950, train_loss_auto=1.400The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: A man wearing a mask is doing some woodworking.
+ predicted: A man in a white shirt and a hat is holding a
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: Three children are sitting in high chairs by a dining table.
+ predicted: A group of children sitting at a table with food.
+Epoch 0:  68%|██████████████████████████████▍              | 80000/118169 [6:36:07<3:08:59,  3.37it/s, v_num=m0xd, train_loss=1.950, train_loss_auto=1.400]Step: 80001: train_loss=2.0927                                                                                                                             
+Epoch 0:  68%|██████████████████████████████▋              | 80500/118169 [6:38:24<3:06:25,  3.37it/s, v_num=m0xd, train_loss=1.910, train_loss_auto=1.710]Step: 80501: train_loss=1.9878
+Epoch 0:  69%|██████████████████████████████▊              | 81000/118169 [6:40:40<3:03:51,  3.37it/s, v_num=m0xd, train_loss=1.880, train_loss_auto=1.820The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: A woman smiling with a hot dog in her hand
+ predicted: A woman in a red shirt eating a hot dog.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: A man laying in bed while using a laptop computer.
+ predicted: A man laying on a bed with a laptop computer.
+Epoch 0:  69%|██████████████████████████████▊              | 81000/118169 [6:41:04<3:04:02,  3.37it/s, v_num=m0xd, train_loss=1.880, train_loss_auto=1.820]Step: 81001: train_loss=1.8656                                                                                                                             
+Epoch 0:  69%|███████████████████████████████              | 81500/118169 [6:43:20<3:01:28,  3.37it/s, v_num=m0xd, train_loss=2.010, train_loss_auto=1.740]Step: 81501: train_loss=1.8452
+Epoch 0:  69%|███████████████████████████████▏             | 82000/118169 [6:45:38<2:58:55,  3.37it/s, v_num=m0xd, train_loss=2.050, train_loss_auto=1.680The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: An old style bedroom is seen in this black and white photograph.
+ predicted: A living room with a couch, a table and a TV
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: A man in a baseball uniform holding a bat
+ predicted: A baseball player is getting ready to hit a ball.
+Epoch 0:  69%|███████████████████████████████▏             | 82000/118169 [6:46:01<2:59:05,  3.37it/s, v_num=m0xd, train_loss=2.050, train_loss_auto=1.680]Step: 82001: train_loss=2.2263                                                                                                                             
+Epoch 0:  70%|███████████████████████████████▍             | 82500/118169 [6:48:16<2:56:31,  3.37it/s, v_num=m0xd, train_loss=2.050, train_loss_auto=1.420]Step: 82501: train_loss=1.9185
+Epoch 0:  70%|███████████████████████████████▌             | 83000/118169 [6:50:32<2:53:57,  3.37it/s, v_num=m0xd, train_loss=1.690, train_loss_auto=1.570The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: A shirtless man wearing a helmet and knee pads skateboarding on a halfpipe.
+ predicted: A man on a skateboard doing a trick on a ramp
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: Modern living room with a ceiling fan, two couches, a coffee table, a fireplace, and a large screen TV.
+ predicted: A living room with a couch, a coffee table, and a
+Epoch 0:  70%|███████████████████████████████▌             | 83000/118169 [6:50:55<2:54:07,  3.37it/s, v_num=m0xd, train_loss=1.690, train_loss_auto=1.570]Step: 83001: train_loss=1.8104                                                                                                                             
+Epoch 0:  71%|███████████████████████████████▊             | 83500/118169 [6:53:07<2:51:31,  3.37it/s, v_num=m0xd, train_loss=1.790, train_loss_auto=1.390]Step: 83501: train_loss=2.0028
+Epoch 0:  71%|███████████████████████████████▉             | 84000/118169 [6:55:27<2:48:59,  3.37it/s, v_num=m0xd, train_loss=1.780, train_loss_auto=1.910The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: a old building with a few motorcycles parked out front
+ predicted: A group of people riding motorcycles in a parking lot.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: A man surfing in the waves at the ocean.
+ predicted: A man riding a surfboard on a wave.
+Epoch 0:  71%|███████████████████████████████▉             | 84000/118169 [6:55:51<2:49:09,  3.37it/s, v_num=m0xd, train_loss=1.780, train_loss_auto=1.910]Step: 84001: train_loss=1.9577                                                                                                                             
+Epoch 0:  72%|████████████████████████████████▏            | 84500/118169 [6:58:10<2:46:37,  3.37it/s, v_num=m0xd, train_loss=1.900, train_loss_auto=1.630]Step: 84501: train_loss=1.8595
+Epoch 0:  72%|████████████████████████████████▎            | 85000/118169 [7:00:26<2:44:04,  3.37it/s, v_num=m0xd, train_loss=1.830, train_loss_auto=1.340The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: There are many suitcases, shoes and bags on the floor.
+ predicted: A pair of luggage bags are on the floor.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: A red stoplight that is next to a stop sign.
+ predicted: A street with a traffic light and a stop sign.
+Epoch 0:  72%|████████████████████████████████▎            | 85000/118169 [7:00:50<2:44:13,  3.37it/s, v_num=m0xd, train_loss=1.830, train_loss_auto=1.340]Step: 85001: train_loss=2.1025                                                                                                                             
+Epoch 0:  72%|████████████████████████████████▌            | 85500/118169 [7:03:05<2:41:39,  3.37it/s, v_num=m0xd, train_loss=1.980, train_loss_auto=1.580]Step: 85501: train_loss=1.8386
+Epoch 0:  73%|████████████████████████████████▋            | 86000/118169 [7:05:17<2:39:05,  3.37it/s, v_num=m0xd, train_loss=1.950, train_loss_auto=1.730The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: A tall brick structure sitting next to a tree.
+ predicted: A brick building with a sign on it.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: A man wearing a mask is doing some woodworking.
+ predicted: A man is cutting a piece of wood with a saw.
+Epoch 0:  73%|████████████████████████████████▋            | 86000/118169 [7:05:41<2:39:13,  3.37it/s, v_num=m0xd, train_loss=1.950, train_loss_auto=1.730]Step: 86001: train_loss=1.9932                                                                                                                             
+Epoch 0:  73%|████████████████████████████████▉            | 86500/118169 [7:07:55<2:36:40,  3.37it/s, v_num=m0xd, train_loss=1.880, train_loss_auto=1.730]Step: 86501: train_loss=1.9259
+Epoch 0:  74%|█████████████████████████████████▏           | 87000/118169 [7:10:10<2:34:06,  3.37it/s, v_num=m0xd, train_loss=2.000, train_loss_auto=2.060The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: Time lapse photo of adult male sitting on couch in various activities.
+ predicted: A group of men sitting on a couch playing video games.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: A tall giraffe rests amidst green grass and trees.
+ predicted: A giraffe standing in a field of grass.
+Epoch 0:  74%|█████████████████████████████████▏           | 87000/118169 [7:10:33<2:34:15,  3.37it/s, v_num=m0xd, train_loss=2.000, train_loss_auto=2.060]Step: 87001: train_loss=1.8583                                                                                                                             
+Epoch 0:  74%|█████████████████████████████████▎           | 87500/118169 [7:12:52<2:31:43,  3.37it/s, v_num=m0xd, train_loss=1.880, train_loss_auto=1.530]Step: 87501: train_loss=2.0169
+Epoch 0:  74%|█████████████████████████████████▌           | 88000/118169 [7:15:13<2:29:12,  3.37it/s, v_num=m0xd, train_loss=1.830, train_loss_auto=1.640The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: Sandwich on black plate with chips on table
+ predicted: A sandwich on a plate with a drink on the side.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: A person holding scissors pretending to cut nose hair.
+ predicted: A man with a mustache is brushing his teeth.
+Epoch 0:  74%|█████████████████████████████████▌           | 88000/118169 [7:15:37<2:29:20,  3.37it/s, v_num=m0xd, train_loss=1.830, train_loss_auto=1.640]Step: 88001: train_loss=1.8404                                                                                                                             
+Epoch 0:  75%|█████████████████████████████████▋           | 88500/118169 [7:17:58<2:26:49,  3.37it/s, v_num=m0xd, train_loss=1.870, train_loss_auto=2.010]Step: 88501: train_loss=1.9700
+Epoch 0:  75%|█████████████████████████████████▉           | 89000/118169 [7:20:17<2:24:17,  3.37it/s, v_num=m0xd, train_loss=1.870, train_loss_auto=1.740The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: A man in a baseball uniform holding a bat
+ predicted: A baseball player is holding a bat in the air.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: this is an image of a woman with a husky dog with a sweater.
+ predicted: A woman is holding a dog in a red and white
+Epoch 0:  75%|█████████████████████████████████▉           | 89000/118169 [7:20:40<2:24:25,  3.37it/s, v_num=m0xd, train_loss=1.870, train_loss_auto=1.740]Step: 89001: train_loss=2.1950                                                                                                                             
+Epoch 0:  76%|██████████████████████████████████           | 89500/118169 [7:23:00<2:21:54,  3.37it/s, v_num=m0xd, train_loss=2.120, train_loss_auto=1.640]Step: 89501: train_loss=1.8227
+Epoch 0:  76%|██████████████████████████████████▎          | 90000/118169 [7:25:21<2:19:23,  3.37it/s, v_num=m0xd, train_loss=1.880, train_loss_auto=1.600The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: Young baseball batter at home plate, waiting for a pitch.
+ predicted: A young boy is playing baseball on a field.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: A man eating a slice of pizza in his left hand.
+ predicted: A man is eating a slice of pizza.
+Epoch 0:  76%|██████████████████████████████████▎          | 90000/118169 [7:25:45<2:19:30,  3.37it/s, v_num=m0xd, train_loss=1.880, train_loss_auto=1.600]Step: 90001: train_loss=1.9247                                                                                                                             
+Epoch 0:  77%|██████████████████████████████████▍          | 90500/118169 [7:27:58<2:16:57,  3.37it/s, v_num=m0xd, train_loss=1.790, train_loss_auto=1.410]Step: 90501: train_loss=2.1065
+Epoch 0:  77%|██████████████████████████████████▋          | 91000/118169 [7:30:16<2:14:25,  3.37it/s, v_num=m0xd, train_loss=1.910, train_loss_auto=1.750The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: A male tennis player prepares to serve on a clay court.
+ predicted: A man is playing tennis on a court.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: A tall brick structure sitting next to a tree.
+ predicted: A sign on a building with a clock on it.
+Epoch 0:  77%|██████████████████████████████████▋          | 91000/118169 [7:30:40<2:14:33,  3.37it/s, v_num=m0xd, train_loss=1.910, train_loss_auto=1.750]Step: 91001: train_loss=1.6876                                                                                                                             
+Epoch 0:  77%|██████████████████████████████████▊          | 91500/118169 [7:33:03<2:12:02,  3.37it/s, v_num=m0xd, train_loss=1.970, train_loss_auto=1.590]Step: 91501: train_loss=1.9253
+Epoch 0:  78%|███████████████████████████████████          | 92000/118169 [7:35:21<2:09:31,  3.37it/s, v_num=m0xd, train_loss=1.950, train_loss_auto=1.730The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: A man in a baseball uniform holding a bat
+ predicted: A baseball player is standing in front of a baseball field.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: A garden with lots of green plants possibly a vegetable garden.
+ predicted: A small garden with a few plants and a fence.
+Epoch 0:  78%|███████████████████████████████████          | 92000/118169 [7:35:45<2:09:38,  3.36it/s, v_num=m0xd, train_loss=1.950, train_loss_auto=1.730]Step: 92001: train_loss=1.8145                                                                                                                             
+Epoch 0:  78%|███████████████████████████████████▏         | 92500/118169 [7:37:58<2:07:05,  3.37it/s, v_num=m0xd, train_loss=2.010, train_loss_auto=1.680]Step: 92501: train_loss=1.9434
+Epoch 0:  79%|███████████████████████████████████▍         | 93000/118169 [7:40:12<2:04:32,  3.37it/s, v_num=m0xd, train_loss=1.820, train_loss_auto=1.300The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: A man is swinging a baseball coming his way.
+ predicted: A baseball player swinging a bat at a baseball game.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: People making and selling bread at a stand.
+ predicted: A woman is cutting up a sandwich on a cutting board.
+Epoch 0:  79%|███████████████████████████████████▍         | 93000/118169 [7:40:37<2:04:39,  3.36it/s, v_num=m0xd, train_loss=1.820, train_loss_auto=1.300]Step: 93001: train_loss=2.0175                                                                                                                             
+Epoch 0:  79%|███████████████████████████████████▌         | 93500/118169 [7:42:58<2:02:09,  3.37it/s, v_num=m0xd, train_loss=1.760, train_loss_auto=1.500]Step: 93501: train_loss=1.9948
+Epoch 0:  80%|███████████████████████████████████▊         | 94000/118169 [7:45:15<1:59:37,  3.37it/s, v_num=m0xd, train_loss=1.810, train_loss_auto=1.440The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: A cat sleeping in someone's brown overnight bag.
+ predicted: A cat is
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: The desk is organized with stationery, plastic drawers, pencils and a clock.
+ predicted: A box with a lot of items in it.
+Epoch 0:  80%|███████████████████████████████████▊         | 94000/118169 [7:45:39<1:59:43,  3.36it/s, v_num=m0xd, train_loss=1.810, train_loss_auto=1.440]Step: 94001: train_loss=2.2578                                                                                                                             
+Epoch 0:  80%|███████████████████████████████████▉         | 94500/118169 [7:47:59<1:57:12,  3.37it/s, v_num=m0xd, train_loss=1.760, train_loss_auto=1.160]Step: 94501: train_loss=1.8686
+Epoch 0:  80%|████████████████████████████████████▏        | 95000/118169 [7:50:13<1:54:40,  3.37it/s, v_num=m0xd, train_loss=1.880, train_loss_auto=1.380The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: A white bird sitting on a rock at a beach.
+ predicted: A bird standing on a rock in the sand.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: An old style bedroom is seen in this black and white photograph.
+ predicted: A living room with a couch, a coffee table and a TV
+Epoch 0:  80%|████████████████████████████████████▏        | 95000/118169 [7:50:37<1:54:46,  3.36it/s, v_num=m0xd, train_loss=1.880, train_loss_auto=1.380]Step: 95001: train_loss=1.9090                                                                                                                             
+Epoch 0:  81%|████████████████████████████████████▎        | 95500/118169 [7:52:54<1:52:15,  3.37it/s, v_num=m0xd, train_loss=1.980, train_loss_auto=1.770]Step: 95501: train_loss=1.9859
+Epoch 0:  81%|████████████████████████████████████▌        | 96000/118169 [7:55:12<1:49:44,  3.37it/s, v_num=m0xd, train_loss=2.210, train_loss_auto=1.840The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: A boy is standing on base and throwing the baseball.
+ predicted: A baseball player swinging a bat at a baseball game.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: A man surfing in the waves at the ocean.
+ predicted: A man is surfing on a wave in the ocean.
+Epoch 0:  81%|████████████████████████████████████▌        | 96000/118169 [7:55:36<1:49:49,  3.36it/s, v_num=m0xd, train_loss=2.210, train_loss_auto=1.840]Step: 96001: train_loss=2.3893                                                                                                                             
+Epoch 0:  82%|████████████████████████████████████▋        | 96500/118169 [7:57:52<1:47:18,  3.37it/s, v_num=m0xd, train_loss=1.950, train_loss_auto=1.780]Step: 96501: train_loss=1.8570
+Epoch 0:  82%|████████████████████████████████████▉        | 97000/118169 [8:00:11<1:44:47,  3.37it/s, v_num=m0xd, train_loss=1.970, train_loss_auto=1.770The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: A man sitting next to an open box of pizza
+ predicted: A man is cutting a pizza with a knife.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: Two men are sitting on steps looking at a cellphone.
+ predicted: A man sitting on a bench with a cell phone in his hand
+Epoch 0:  82%|████████████████████████████████████▉        | 97000/118169 [8:00:35<1:44:52,  3.36it/s, v_num=m0xd, train_loss=1.970, train_loss_auto=1.770]Step: 97001: train_loss=2.0120                                                                                                                             
+Epoch 0:  83%|█████████████████████████████████████▏       | 97500/118169 [8:02:48<1:42:21,  3.37it/s, v_num=m0xd, train_loss=1.760, train_loss_auto=1.100]Step: 97501: train_loss=1.9160
+Epoch 0:  83%|█████████████████████████████████████▎       | 98000/118169 [8:05:03<1:39:49,  3.37it/s, v_num=m0xd, train_loss=1.810, train_loss_auto=1.590The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: A boy is standing on base and throwing the baseball.
+ predicted: A baseball player is swinging a bat at a baseball.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: a large boat on the beach near a body of water 
+ predicted: A man is flying a kite on a beach.
+Epoch 0:  83%|█████████████████████████████████████▎       | 98000/118169 [8:05:27<1:39:54,  3.36it/s, v_num=m0xd, train_loss=1.810, train_loss_auto=1.590]Step: 98001: train_loss=2.0594                                                                                                                             
+Epoch 0:  83%|█████████████████████████████████████▌       | 98500/118169 [8:07:47<1:37:24,  3.37it/s, v_num=m0xd, train_loss=1.770, train_loss_auto=1.630]Step: 98501: train_loss=1.8592
+Epoch 0:  84%|█████████████████████████████████████▋       | 99000/118169 [8:10:03<1:34:53,  3.37it/s, v_num=m0xd, train_loss=1.930, train_loss_auto=1.560The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: A skateboarder doing a jumping trick at a skate park.
+ predicted: A young man is riding a skateboard on a concrete ledge
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: A shirtless man wearing a helmet and knee pads skateboarding on a halfpipe.
+ predicted: A man is jumping on a skateboard.
+Epoch 0:  84%|█████████████████████████████████████▋       | 99000/118169 [8:10:27<1:34:57,  3.36it/s, v_num=m0xd, train_loss=1.930, train_loss_auto=1.560]Step: 99001: train_loss=1.7936                                                                                                                             
+Epoch 0:  84%|█████████████████████████████████████▉       | 99500/118169 [8:12:48<1:32:27,  3.37it/s, v_num=m0xd, train_loss=1.980, train_loss_auto=1.820]Step: 99501: train_loss=1.8967
+Epoch 0:  85%|█████████████████████████████████████▏      | 100000/118169 [8:15:06<1:29:57,  3.37it/s, v_num=m0xd, train_loss=2.040, train_loss_auto=1.970The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: A man poses with a young boy who's holding a kite.
+ predicted: A man and a boy standing on a bench in a park.
+The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+*****************************************
+*****************************************
+   caption: A woman checks her phone while sitting on a wooden bench.
+ predicted: A woman sitting on a bench reading a book.
+Epoch 0:  85%|█████████████████████████████████████▏      | 100000/118169 [8:15:30<1:30:01,  3.36it/s, v_num=m0xd, train_loss=2.040, train_loss_auto=1.970]`Trainer.fit` stopped: `max_steps=100000` reached.                                                                                                         
+Epoch 0:  85%|█████████████████████████████████████▏      | 100000/118169 [8:15:30<1:30:01,  3.36it/s, v_num=m0xd, train_loss=2.040, train_loss_auto=1.970]
+wandb: \ 2.864 MB of 2.866 MB uploaded
+wandb: Run history:
+wandb:               epoch ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             lr-Adam ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:          train_loss ▅█▆▃▄▅▅▃▃▁▃█▆▄▂▃▂▃▂▄▄▇▃▂▃▁▄▄▆▂▅▅▁▁▅▄▄▄▂▅
+wandb:     train_loss_auto ▆▅▄▆▃▅▃▃▂▃▂██▅▄▃▄▃▂▄▄█▇▁▃▂▄▂▄▄▄▅▄▅▆▅▄▂▄▇
+wandb:     train_step_loss ▅█▆▃▄▅▅▃▃▁▃█▆▄▂▃▂▃▂▄▄▇▃▂▃▁▄▄▆▂▅▅▁▁▅▄▄▄▂▅
+wandb: trainer/global_step ▁▁▁▂▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb: 
+wandb: Run summary:
+wandb:               epoch 0
+wandb:             lr-Adam 0.0001
+wandb:          train_loss 2.04229
+wandb:     train_loss_auto 1.97293
+wandb:     train_step_loss 2.04229
+wandb: trainer/global_step 99999
+wandb: 
+wandb: 🚀 View run mm_phi_stage1 at: https://wandb.ai/subrahmanyamniharika/lightning_logs/runs/sdgbm0xd
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /tmp/wandb/run-20240204_084100-sdgbm0xd/logs
+ubuntu@ip-172-31-5-50:~/Capstone/Stage1$ 
